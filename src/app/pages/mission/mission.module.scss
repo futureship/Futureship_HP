@@ -1,0 +1,13 @@
+.main {
+  flex-grow: 1; /* メインコンテンツが残りのスペースを占める */
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // display: flex;
+  // height: 100%;
+  // flex-direction: column;
+  // align-items: flex-end;
+  // justify-content: flex-end;
+}
