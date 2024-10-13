@@ -1,6 +1,12 @@
 @import '_color.const';
 
 // グラデーションパターン２：線型
-@mixin gradient2{
+@mixin gradient2 {
   background: linear-gradient(to right, $water-blue1, $pink1);
+  color: $white1;
+}
+
+@mixin gradientBackground {
+  background: linear-gradient(to right, $water-blue1, $pink1);
+  opacity: 0.3;
 }

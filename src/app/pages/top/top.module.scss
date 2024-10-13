@@ -1,0 +1,18 @@
+@import '@style/common.module';
+
+.container {
+  display: flex;
+  flex-direction: column; /* 縦に並べる */
+  min-height: 100vh; /* ビューポートの高さを100%に設定 */
+}
+
+.main {
+  flex: 1; /* メインコンテンツが残りのスペースを占める */
+}
+
+// footer {
+//   background-color: #333; /* フッターの背景色 */
+//   color: white; /* フッターのテキスト色 */
+//   padding: 20px; /* フッターのパディング */
+//   text-align: center; /* テキストを中央揃え */
+// }

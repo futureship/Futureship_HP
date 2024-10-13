@@ -5,7 +5,12 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
+  --background: linear-gradient(
+    to right,
+    rgba(86, 202, 228, 0.2),
+    rgba(229, 50, 168, 0.2)
+  );
+  /* --background: linear-gradient(to right, #56cae4, #e532a8); */
   --foreground: #171717;
 }
 
