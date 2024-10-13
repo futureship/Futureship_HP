@@ -6,6 +6,11 @@
       "service": "Service",
       "recruit": "Recruit",
       "contact": "お問い合わせ"
+    },
+    "title": {
+      "subTitle": "生きやすい",
+      "title1": "Creating",
+      "title2": "a livable society"
     }
   }
 }
