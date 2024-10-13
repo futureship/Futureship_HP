@@ -1,0 +1,7 @@
+@import '@style/common.module';
+
+// CSSファイルに追加
+.header {
+  @include gradient2;
+  height: 80px;
+}
