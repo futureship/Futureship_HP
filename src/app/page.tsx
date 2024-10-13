@@ -1,4 +1,14 @@
-import { Top } from "@/app/top/top";
+import { Top } from "@/app/pages/top/top";
+
+// export async function getStaticProps({ locale }) {
+//   return {
+//     props: {
+//       ...(await serverSideTranslations(locale, [
+//         'common',
+//       ])),
+//     },
+//   }
+// }
 
 export default function Home() {
   return (<Top></Top>)

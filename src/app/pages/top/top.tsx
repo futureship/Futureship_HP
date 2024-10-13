@@ -1,4 +1,7 @@
-import { Header } from "@/app/top/components/header/header"
+'use client'
+
+import { Header } from "@/app/pages/top/components/header/header"
+import '@i18n'
 
 export const Top: React.FC = () => {
   return (
