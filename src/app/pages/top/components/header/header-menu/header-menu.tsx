@@ -4,6 +4,7 @@ import styles from './header-menu.module.scss';
 import { useTranslation } from 'react-i18next';
 import { FC } from 'react';
 import { useRouter } from 'next/navigation';
+// import '@i18n/i18n'
 
 export const HeaderMenu: FC = () => {
   const { t } = useTranslation('common');
@@ -17,6 +18,10 @@ export const HeaderMenu: FC = () => {
     router.push('/recruit');
   };
 
+  const onClickContact = () => {
+    router.push('/about');
+  };
+
   return (
     <div className={styles.menu}>
       <div className={styles.cursor}>{t('top.header.aboutMe')}</div>
@@ -26,7 +31,9 @@ export const HeaderMenu: FC = () => {
       <div className={styles.cursor} onClick={onClickRecruit}>
         {t('top.header.recruit')}
       </div>
-      <div className={styles.cursor}>{t('top.header.contact')}</div>
+      <div className={styles.cursor} onClick={onClickContact}>
+        {t('top.header.contact')}
+      </div>
     </div>
   );
 };
