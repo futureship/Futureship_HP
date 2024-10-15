@@ -1,0 +1,26 @@
+.service1 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.service2 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button {
+  background-color: #4caf50; /* ボタンの背景色 */
+  border: none; /* ボーダーなし */
+  color: white; /* テキストの色 */
+  padding: 15px 32px; /* 内側の余白 */
+  text-align: center; /* テキストの中央揃え */
+  text-decoration: none; /* テキストの下線なし */
+  display: inline-block; /* インラインブロック要素 */
+  font-size: 16px; /* フォントサイズ */
+  margin: 4px 2px; /* 外側の余白 */
+  cursor: pointer; /* カーソルをポインタに */
+  border-radius: 16px; /* 角を丸くする */
+  transition: background-color 0.3s; /* 背景色の遷移 */
+  width: 120px;
+  height: 32px;
+}
