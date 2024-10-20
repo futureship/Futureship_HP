@@ -9,7 +9,7 @@
 
 .main {
   flex-grow: 1; /* メインコンテンツが残りのスペースを占める */
-  padding: 20px;
+  padding: 20px 40px 20px 20px;
   display: flex;
   height: 100%;
   flex-direction: column;
@@ -29,6 +29,33 @@
   font-size: 75px;
   font-weight: 900;
   color: $gray1;
+}
+
+@mixin circle($size, $top, $left) {
+  @include gradient4;
+  width: $size; // 円の幅
+  height: $size; // 円の高さ
+  top: $top;
+  left: $left;
+  position: absolute;
+  border-radius: 50%; // 円にするためのボーダー半径
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25); // 影の設定
+}
+
+.circle1 {
+  @include circle(14px, -16px, -40px);
+}
+
+.circle2 {
+  @include circle(22px, 0px, -30px);
+}
+
+.circle3 {
+  @include circle(30px, 20px, 340px);
+}
+
+.subTitleArea {
+  position: relative;
 }
 
 // footer {
