@@ -1,0 +1,16 @@
+{
+  "top": {
+    "header": {
+      "logo": "Futureship",
+      "aboutMe": "私たちについて",
+      "service": "Service",
+      "recruit": "Recruit",
+      "contact": "お問い合わせ"
+    },
+    "title": {
+      "subTitle": "生きやすい社会を創る",
+      "title1": "Creating",
+      "title2": "a livable society"
+    }
+  }
+}
