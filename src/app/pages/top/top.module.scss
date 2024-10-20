@@ -17,17 +17,14 @@
   justify-content: flex-end;
 }
 
+.subTitleArea {
+  position: relative;
+}
+
 .subTitle {
   @include fontAleo;
   font-size: 34px;
   font-weight: bold;
-  color: $gray1;
-}
-
-.title {
-  @include fontOnest;
-  font-size: 75px;
-  font-weight: 900;
   color: $gray1;
 }
 
@@ -54,13 +51,9 @@
   @include circle(30px, 20px, 340px);
 }
 
-.subTitleArea {
-  position: relative;
+.title {
+  @include fontOnest;
+  font-size: 75px;
+  font-weight: 900;
+  color: $gray1;
 }
-
-// footer {
-//   background-color: #333; /* フッターの背景色 */
-//   color: white; /* フッターのテキスト色 */
-//   padding: 20px; /* フッターのパディング */
-//   text-align: center; /* テキストを中央揃え */
-// }
