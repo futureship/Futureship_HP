@@ -1,4 +1,5 @@
 @import '@style/common.module';
+@import '@style/_color.const';
 
 .container {
   display: flex;
@@ -14,6 +15,20 @@
   flex-direction: column;
   align-items: flex-end;
   justify-content: flex-end;
+}
+
+.subTitle {
+  @include fontAleo;
+  font-size: 34px;
+  font-weight: bold;
+  color: $gray1;
+}
+
+.title {
+  @include fontOnest;
+  font-size: 75px;
+  font-weight: 900;
+  color: $gray1;
 }
 
 // footer {

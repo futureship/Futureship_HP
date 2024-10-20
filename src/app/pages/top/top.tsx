@@ -13,9 +13,9 @@ export const Top: React.FC = () => {
     <div className={styles.container}>
       <Header></Header>
       <div className={styles.main}>
-        <div>{t('top.title.subTitle')}</div>
-        <div>{t('top.title.title1')}</div>
-        <div>{t('top.title.title2')}</div>
+        <div className={styles.subTitle}>{t('top.title.subTitle')}</div>
+        <div className={styles.title}>{t('top.title.title1')}</div>
+        <div className={styles.title}>{t('top.title.title2')}</div>
       </div>
       <Footer></Footer>
     </div>
