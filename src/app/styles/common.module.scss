@@ -17,6 +17,7 @@
   color: $white1;
 }
 
+// グラデーションパターン３：左上→右下
 @mixin gradient3 {
   background: linear-gradient(45deg, $water-blue1, $pink1);
 }
