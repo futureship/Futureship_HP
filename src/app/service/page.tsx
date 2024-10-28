@@ -22,6 +22,22 @@ const Service: React.FC = () => {
     .split('\n')
     .map((line) => <div>{line}</div>);
 
+  const recruitService1Description1 = t('service.recruitService1.description1')
+    .split('\n')
+    .map((line) => <div>{line}</div>);
+
+  const recruitService1Description2 = t('service.recruitService1.description2')
+    .split('\n')
+    .map((line) => <div>{line}</div>);
+
+  const recruitService2Description1 = t('service.recruitService2.description1')
+    .split('\n')
+    .map((line) => <div>{line}</div>);
+
+  const recruitService2Description2 = t('service.recruitService2.description2')
+    .split('\n')
+    .map((line) => <div>{line}</div>);
+
   return (
     <div>
       <div className={styles.title}>{t('service.title')}</div>
@@ -48,13 +64,19 @@ const Service: React.FC = () => {
         <img src="/assets/svg/service2-img.svg"></img>
       </div>
 
-      <div>{}</div>
-      <div></div>
-      <button></button>
+      <div>{t('service.recruitService1.title')}</div>
+      <div>{recruitService1Description1}</div>
+      <div>{recruitService1Description2}</div>
+      <button className={styles.button}>
+        {t('service.recruitService1.button')}
+      </button>
 
-      <div></div>
-      <div></div>
-      <button></button>
+      <div>{t('service.recruitService2.title')}</div>
+      <div>{recruitService2Description1}</div>
+      <div>{recruitService2Description2}</div>
+      <button className={styles.button}>
+        {t('service.recruitService2.button')}
+      </button>
     </div>
   );
 };
