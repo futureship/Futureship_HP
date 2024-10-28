@@ -1,3 +1,10 @@
+@import '@style/common.module';
+@import '@style/_color.const';
+
+.title {
+  color: linear-gradient(135deg, $water-blue1, $pink1);
+}
+
 .service1 {
   display: flex;
   justify-content: space-between;
@@ -9,10 +16,11 @@
 }
 
 .button {
-  background-color: #4caf50; /* ボタンの背景色 */
+  @include gradient3;
+  // background-color: ; /* ボタンの背景色 */
   border: none; /* ボーダーなし */
   color: white; /* テキストの色 */
-  padding: 15px 32px; /* 内側の余白 */
+  // padding: 15px 32px; /* 内側の余白 */
   text-align: center; /* テキストの中央揃え */
   text-decoration: none; /* テキストの下線なし */
   display: inline-block; /* インラインブロック要素 */
