@@ -1,82 +1,57 @@
 'use client';
 
+import RecruitService from '@/app/service/components/recruitService/recruitService';
+import ServiceInfo from '@/app/service/components/service/serviceInfo';
 import styles from './service.module.scss';
 import '@i18n';
 import { useTranslation } from 'react-i18next';
 
 const Service: React.FC = () => {
   const { t } = useTranslation('common');
-  const service1Description1 = t('service.service1.description1')
-    .split('\n')
-    .map((line) => <div>{line}</div>);
-
-  const service1Description2 = t('service.service1.description2')
-    .split('\n')
-    .map((line) => <div>{line}</div>);
-
-  const service2Description1 = t('service.service2.description1')
-    .split('\n')
-    .map((line) => <div>{line}</div>);
-
-  const service2Description2 = t('service.service2.description2')
-    .split('\n')
-    .map((line) => <div>{line}</div>);
-
-  const recruitService1Description1 = t('service.recruitService1.description1')
-    .split('\n')
-    .map((line) => <div>{line}</div>);
-
-  const recruitService1Description2 = t('service.recruitService1.description2')
-    .split('\n')
-    .map((line) => <div>{line}</div>);
-
-  const recruitService2Description1 = t('service.recruitService2.description1')
-    .split('\n')
-    .map((line) => <div>{line}</div>);
-
-  const recruitService2Description2 = t('service.recruitService2.description2')
-    .split('\n')
-    .map((line) => <div>{line}</div>);
 
   return (
     <div>
       <div className={styles.title}>{t('service.title')}</div>
       <div className={styles.service1}>
         <img src="/assets/svg/service1-img.svg"></img>
-        <div>
-          <div>{t('service.service1.title')}</div>
-          <div>{service1Description1}</div>
-          <div>{service1Description2}</div>
-          <button className={styles.button}>
-            {t('service.service1.serviceAbout')}
-          </button>
-        </div>
+        <ServiceInfo
+          title={t('service.service1.title')}
+          description={[
+            t('service.service1.description1'),
+            t('service.service1.description2'),
+          ]}
+          button={t('service.service1.button')}
+        ></ServiceInfo>
       </div>
       <div className={styles.service2}>
-        <div>
-          <div>{t('service.service2.title')}</div>
-          <div>{service2Description1}</div>
-          <div>{service2Description2}</div>
-          <button className={styles.button}>
-            {t('service.service2.serviceAbout')}
-          </button>
-        </div>
+        <ServiceInfo
+          title={t('service.service2.title')}
+          description={[
+            t('service.service2.description1'),
+            t('service.service2.description2'),
+          ]}
+          button={t('service.service2.button')}
+        ></ServiceInfo>
         <img src="/assets/svg/service2-img.svg"></img>
       </div>
 
-      <div>{t('service.recruitService1.title')}</div>
-      <div>{recruitService1Description1}</div>
-      <div>{recruitService1Description2}</div>
-      <button className={styles.button}>
-        {t('service.recruitService1.button')}
-      </button>
+      <RecruitService
+        title={t('service.recruitService1.title')}
+        description={[
+          t('service.recruitService1.description1'),
+          t('service.recruitService1.description2'),
+        ]}
+        button={t('service.recruitService1.button')}
+      ></RecruitService>
 
-      <div>{t('service.recruitService2.title')}</div>
-      <div>{recruitService2Description1}</div>
-      <div>{recruitService2Description2}</div>
-      <button className={styles.button}>
-        {t('service.recruitService2.button')}
-      </button>
+      <RecruitService
+        title={t('service.recruitService2.title')}
+        description={[
+          t('service.recruitService2.description1'),
+          t('service.recruitService2.description2'),
+        ]}
+        button={t('service.recruitService2.button')}
+      ></RecruitService>
     </div>
   );
 };
