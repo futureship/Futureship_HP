@@ -13,7 +13,9 @@ const Service: React.FC = () => {
     <div className={styles.servicePage}>
       <div className={styles.serviceTitle}>{t('service.title')}</div>
       <div className={styles.service1}>
-        <img src="/assets/svg/service1-img.svg"></img>
+        <div className={styles.container}>
+          <img src="/assets/svg/service1-img.svg"></img>
+        </div>
         <ServiceInfo
           title={t('service.service1.title')}
           description={[
@@ -32,7 +34,9 @@ const Service: React.FC = () => {
           ]}
           button={t('service.service2.button')}
         ></ServiceInfo>
-        <img src="/assets/svg/service2-img.svg"></img>
+        <div className={styles.container}>
+          <img src="/assets/svg/service2-img.svg"></img>
+        </div>
       </div>
 
       <RecruitService

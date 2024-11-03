@@ -16,16 +16,22 @@
   margin-left: 12%;
 }
 
+.container {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+}
+
 .service1 {
   display: flex;
   justify-content: center;
-  padding-bottom: 30px;
+  padding-bottom: 60px;
 }
 
 .service2 {
   display: flex;
   justify-content: center;
-  padding-bottom: 30px;
+  padding-bottom: 60px;
 }
 
 @mixin button {
