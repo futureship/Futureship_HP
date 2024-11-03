@@ -8,12 +8,12 @@ interface ServiceInfoChild {
 
 const ServiceInfo: React.FC<ServiceInfoChild> = (props) => {
   return (
-    <div>
-      <div>{props.title}</div>
+    <div className={styles.serviceInfo}>
+      <div className={styles.title}>{props.title}</div>
 
       {props.description.map((desc) => {
         return (
-          <div>
+          <div className={styles.description}>
             {desc.split('\n').map((line) => (
               <div>{line}</div>
             ))}
