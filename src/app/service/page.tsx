@@ -11,7 +11,7 @@ const Service: React.FC = () => {
 
   return (
     <div className={styles.servicePage}>
-      <div className={styles.title}>{t('service.title')}</div>
+      <div className={styles.serviceTitle}>{t('service.title')}</div>
       <div className={styles.service1}>
         <img src="/assets/svg/service1-img.svg"></img>
         <ServiceInfo

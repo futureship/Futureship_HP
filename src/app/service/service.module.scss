@@ -5,18 +5,27 @@
   @include fontOnest;
 }
 
-.title {
-  color: linear-gradient(135deg, $water-blue1, $pink1);
+.serviceTitle {
+  background: linear-gradient(135deg, $water-blue1, $pink1);
+  background-clip: text;
+  color: transparent;
+  font-size: 34px;
+  font-weight: bold;
+  width: 150px;
+  padding: 20px 0;
+  margin-left: 12%;
 }
 
 .service1 {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  padding-bottom: 30px;
 }
 
 .service2 {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  padding-bottom: 30px;
 }
 
 @mixin button {
