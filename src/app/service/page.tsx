@@ -1,7 +1,7 @@
 'use client';
 
 import RecruitService from '@/app/service/components/recruitService/recruitService';
-import ServiceInfo from '@/app/service/components/service/serviceInfo';
+import ServiceInfo from '@/app/service/components/service-info/serviceInfo';
 import styles from './service.module.scss';
 import '@i18n';
 import { useTranslation } from 'react-i18next';
@@ -10,7 +10,7 @@ const Service: React.FC = () => {
   const { t } = useTranslation('common');
 
   return (
-    <div>
+    <div className={styles.servicePage}>
       <div className={styles.title}>{t('service.title')}</div>
       <div className={styles.service1}>
         <img src="/assets/svg/service1-img.svg"></img>

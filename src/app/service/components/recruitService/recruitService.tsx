@@ -8,12 +8,12 @@ interface RecruitServiceChild {
 
 const RecruitService: React.FC<RecruitServiceChild> = (props) => {
   return (
-    <>
-      <div>{props.title}</div>
+    <div className={styles.recruitService}>
+      <div className={styles.title}>{props.title}</div>
 
       {props.description.map((desc) => {
         return (
-          <div>
+          <div className={styles.description}>
             {desc.split('\n').map((line) => (
               <div>{line}</div>
             ))}
@@ -22,7 +22,7 @@ const RecruitService: React.FC<RecruitServiceChild> = (props) => {
       })}
 
       <button className={styles.button}>{props.button}</button>
-    </>
+    </div>
   );
 };
 export default RecruitService;
