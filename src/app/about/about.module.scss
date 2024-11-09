@@ -1,11 +1,27 @@
+@import '@style/common.module';
+
 .container {
+  @include fontOnest;
+
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+.aboutTitle {
+  font-size: 34px;
+  font-weight: bold;
+  letter-spacing: 10px;
+
+  padding: 60px 0;
+}
+
 .preLine {
   white-space: pre-line;
+}
+
+.companyProfile {
+  padding-bottom: 60px;
 }
 
 .companyProfileTd {
@@ -16,4 +32,9 @@
 
 .historyTd {
   padding-right: 10px;
+}
+
+.historyTh {
+  display: flex;
+  justify-content: start;
 }

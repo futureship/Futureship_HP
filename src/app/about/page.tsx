@@ -17,49 +17,50 @@ const About: React.FC = () => {
 
   return (
     <div className={styles.container}>
-      <div>{t('about.title')}</div>
-
-      <table>
-        <tbody>
-          <tr>
-            <td className={styles.companyProfileTd}>
-              {t('about.companyName')}
-            </td>
-            <td>{t('about.contents.companyName')}</td>
-          </tr>
-          <tr>
-            <td className={styles.companyProfileTd}>
-              {t('about.foundationDay')}
-            </td>
-            <td>{t('about.contents.foundationDay')}</td>
-          </tr>
-          <tr>
-            <td className={styles.companyProfileTd}>{t('about.address')}</td>
-            <td>{t('about.contents.address')}</td>
-          </tr>
-          <tr>
-            <td className={styles.companyProfileTd}>{t('about.ceo')}</td>
-            <td>{t('about.contents.ceo')}</td>
-          </tr>
-          <tr>
-            <td className={styles.companyProfileTd}>{t('about.business')}</td>
-            <td>{t('about.contents.business')}</td>
-          </tr>
-          <tr>
-            <td className={styles.companyProfileTd}>{t('about.vision')}</td>
-            <td>{t('about.contents.vision')}</td>
-          </tr>
-          <tr>
-            <td className={styles.companyProfileTd}>{t('about.mission')}</td>
-            <td className={styles.preLine}>{t('about.contents.mission')}</td>
-          </tr>
-        </tbody>
-      </table>
+      <div className={styles.aboutTitle}>{t('about.title')}</div>
+      <div className={styles.companyProfile}>
+        <table>
+          <tbody>
+            <tr>
+              <td className={styles.companyProfileTd}>
+                {t('about.companyName')}
+              </td>
+              <td>{t('about.contents.companyName')}</td>
+            </tr>
+            <tr>
+              <td className={styles.companyProfileTd}>
+                {t('about.foundationDay')}
+              </td>
+              <td>{t('about.contents.foundationDay')}</td>
+            </tr>
+            <tr>
+              <td className={styles.companyProfileTd}>{t('about.address')}</td>
+              <td>{t('about.contents.address')}</td>
+            </tr>
+            <tr>
+              <td className={styles.companyProfileTd}>{t('about.ceo')}</td>
+              <td>{t('about.contents.ceo')}</td>
+            </tr>
+            <tr>
+              <td className={styles.companyProfileTd}>{t('about.business')}</td>
+              <td>{t('about.contents.business')}</td>
+            </tr>
+            <tr>
+              <td className={styles.companyProfileTd}>{t('about.vision')}</td>
+              <td>{t('about.contents.vision')}</td>
+            </tr>
+            <tr>
+              <td className={styles.companyProfileTd}>{t('about.mission')}</td>
+              <td className={styles.preLine}>{t('about.contents.mission')}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
       <table>
         <thead>
           <tr>
-            <th>{t('about.history')}</th>
+            <th className={styles.historyTh}>{t('about.history')}</th>
             <th></th>
           </tr>
         </thead>
