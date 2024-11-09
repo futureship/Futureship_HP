@@ -12,13 +12,20 @@ export const HeaderMenu: FC = () => {
   const onClickService = () => {
     router.push('/service');
   };
+
+  const onClickRecruit = () => {
+    router.push('/recruit');
+  };
+
   return (
     <div className={styles.menu}>
       <div className={styles.cursor}>{t('top.header.aboutMe')}</div>
       <div className={styles.cursor} onClick={onClickService}>
         {t('top.header.service')}
       </div>
-      <div className={styles.cursor}>{t('top.header.recruit')}</div>
+      <div className={styles.cursor} onClick={onClickRecruit}>
+        {t('top.header.recruit')}
+      </div>
       <div className={styles.cursor}>{t('top.header.contact')}</div>
     </div>
   );

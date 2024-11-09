@@ -1,4 +1,4 @@
-@import '../../service.module.scss';
+@import '@style/common.module';
 @import '@style/_color.const';
 
 .serviceInfo {
@@ -32,6 +32,6 @@
 }
 
 .button {
-  @include button;
+  @include gradient-button;
   font-size: 14px;
 }
