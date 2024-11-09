@@ -9,6 +9,8 @@
 }
 
 .aboutTitle {
+  @include textShadow;
+
   font-size: 34px;
   font-weight: bold;
   letter-spacing: 10px;
