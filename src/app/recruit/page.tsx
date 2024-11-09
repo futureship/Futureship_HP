@@ -1,8 +1,11 @@
+'use client';
+
 import RecruitService from '@/app/recruit/recruitService/recruitService';
 import React from 'react';
+import '@i18n';
 import { useTranslation } from 'react-i18next';
 
-export const page = () => {
+const Recruit: React.FC = () => {
   const { t } = useTranslation('common');
 
   return (
@@ -26,3 +29,5 @@ export const page = () => {
     </div>
   );
 };
+
+export default Recruit;

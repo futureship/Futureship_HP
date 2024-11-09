@@ -1,9 +1,9 @@
 'use client';
 
-import RecruitService from '@/app/service/components/recruitService/recruitService';
 import ServiceInfo from '@/app/service/components/service-info/serviceInfo';
 import styles from './service.module.scss';
 import '@i18n';
+import '../globals.css';
 import { useTranslation } from 'react-i18next';
 
 const Service: React.FC = () => {
@@ -38,24 +38,6 @@ const Service: React.FC = () => {
           <img src="/assets/svg/service2-img.svg"></img>
         </div>
       </div>
-
-      <RecruitService
-        title={t('service.recruitService1.title')}
-        description={[
-          t('service.recruitService1.description1'),
-          t('service.recruitService1.description2'),
-        ]}
-        button={t('service.recruitService1.button')}
-      ></RecruitService>
-
-      <RecruitService
-        title={t('service.recruitService2.title')}
-        description={[
-          t('service.recruitService2.description1'),
-          t('service.recruitService2.description2'),
-        ]}
-        button={t('service.recruitService2.button')}
-      ></RecruitService>
     </div>
   );
 };
