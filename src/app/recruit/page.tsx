@@ -11,20 +11,20 @@ const Recruit: React.FC = () => {
   return (
     <div>
       <RecruitService
-        title={t('service.recruitService1.title')}
+        title={t('recruit.recruit1.title')}
         description={[
-          t('service.recruitService1.description1'),
-          t('service.recruitService1.description2'),
+          t('recruit.recruit1.description1'),
+          t('recruit.recruit1.description2'),
         ]}
-        button={t('service.recruitService1.button')}
+        button={t('recruit.recruit1.button')}
       ></RecruitService>
       <RecruitService
-        title={t('service.recruitService2.title')}
+        title={t('recruit.recruit2.title')}
         description={[
-          t('service.recruitService2.description1'),
-          t('service.recruitService2.description2'),
+          t('recruit.recruit2.description1'),
+          t('recruit.recruit2.description2'),
         ]}
-        button={t('service.recruitService2.button')}
+        button={t('recruit.recruit2.button')}
       ></RecruitService>
     </div>
   );
