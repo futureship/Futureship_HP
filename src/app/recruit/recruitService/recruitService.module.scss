@@ -10,10 +10,11 @@
 }
 
 .title {
+  @include textShadow;
+
   font-size: 34px;
   font-weight: bold;
   color: $gray1;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .description {
