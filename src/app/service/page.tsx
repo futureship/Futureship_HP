@@ -5,6 +5,7 @@ import styles from './service.module.scss';
 import '@i18n';
 import '../globals.css';
 import { useTranslation } from 'react-i18next';
+import Footer from '@/app/components/footer/footer';
 
 const Service: React.FC = () => {
   const { t } = useTranslation('common');
@@ -38,6 +39,9 @@ const Service: React.FC = () => {
           <img src="/assets/svg/service2-img.svg"></img>
         </div>
       </div>
+      <footer>
+        <Footer></Footer>
+      </footer>
     </div>
   );
 };

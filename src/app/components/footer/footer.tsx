@@ -11,13 +11,13 @@ const Footer: React.FC = () => {
   return (
     <div className={styles.footer}>
       <div className={styles.menu}>
-        <div>
+        <div className={styles.company}>
           <div className={styles.companyName}>{t('footer.companyName')}</div>
-          <div>{t('footer.subTitle')}</div>
+          <label>{t('footer.subTitle')}</label>
         </div>
 
-        <div>
-          <div className={styles.menuCategory}>
+        <div className={styles.menuCategory}>
+          <div className={styles.menuCategoryTitle}>
             {t('footer.menu.base.forAboutMe')}
           </div>
           <div>{t('footer.menu.base.profile')}</div>
@@ -26,36 +26,38 @@ const Footer: React.FC = () => {
           <div>{t('footer.menu.base.message')}</div>
         </div>
 
-        <div>
-          <div className={styles.menuCategory}>
+        <div className={styles.menuCategory}>
+          <div className={styles.menuCategoryTitle}>
             {t('footer.menu.service.service')}
           </div>
           <div>{t('footer.menu.service.service1')}</div>
           <div>{t('footer.menu.service.service2')}</div>
         </div>
 
-        <div>
-          <div className={styles.menuCategory}>
+        <div className={styles.menuCategory}>
+          <div className={styles.menuCategoryTitle}>
             {t('footer.menu.donation.donation')}
           </div>
         </div>
 
-        <div>
-          <div className={styles.menuCategory}>
+        <div className={styles.menuCategory}>
+          <div className={styles.menuCategoryTitle}>
             {t('footer.menu.recruitment.recruitment')}
           </div>
         </div>
 
-        <div>
-          <div className={styles.menuCategory}>
+        <div className={styles.menuCategory}>
+          <div className={styles.menuCategoryTitle}>
             {t('footer.menu.privacyPolicy.privacyPolicy')}
           </div>
         </div>
       </div>
-      <div>
-        <button>
-          <div>{t('footer.contact')}</div>
-          <div>{t('footer.contactMessage')}</div>
+      <div className={styles.contactArea}>
+        <button className={styles.contact}>
+          <span className={styles.contactMsg}>{t('footer.contact')}</span>
+          <span className={styles.contactSub}>
+            {t('footer.contactMessage')}
+          </span>
         </button>
       </div>
     </div>
