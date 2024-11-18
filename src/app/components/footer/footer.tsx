@@ -10,6 +10,7 @@ const Footer: React.FC = () => {
 
   return (
     <div className={styles.footer}>
+      <div className={styles.curve}></div>
       <div className={styles.menu}>
         <div className={styles.company}>
           <div className={styles.companyName}>{t('footer.companyName')}</div>

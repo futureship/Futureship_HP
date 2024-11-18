@@ -3,7 +3,19 @@
 .footer {
   @include gradient2;
 
-  padding: 0 30px 60px 30px;
+  // padding: 0 30px 60px 30px;
+  padding-bottom: 60px;
+}
+
+.curve {
+  height: 60px;
+  width: 100%; /* 幅を指定 */
+  background-color: #fff; /* 背景色を指定 */
+  border-bottom-left-radius: 50%; /* 左上の角を丸く */
+  border-bottom-right-radius: 50%; /* 右上の角を丸く */
+  position: relative; /* 相対位置を指定 */
+  // top: -30px; /* 上に移動 */
+  margin-bottom: 20px;
 }
 
 .menu {
@@ -13,6 +25,7 @@
   display: grid;
   grid-template-columns: 3fr 1fr 1fr 1fr 1fr 1fr;
   font-size: 14px;
+  padding: 0 30px;
 }
 
 .company {
@@ -37,6 +50,7 @@
 .contactArea {
   display: flex;
   justify-content: flex-end;
+  padding-right: 30px;
 }
 
 .contact {
