@@ -3,7 +3,6 @@
 .footer {
   @include gradient2;
 
-  // padding: 0 30px 60px 30px;
   padding-bottom: 60px;
 }
 
@@ -14,14 +13,12 @@
   border-bottom-left-radius: 50%; /* 左上の角を丸く */
   border-bottom-right-radius: 50%; /* 右上の角を丸く */
   position: relative; /* 相対位置を指定 */
-  // top: -30px; /* 上に移動 */
   margin-bottom: 20px;
 }
 
 .menu {
   @include fontOnest;
-  // display: flex;
-  // justify-content: space-between;
+
   display: grid;
   grid-template-columns: 3fr 1fr 1fr 1fr 1fr 1fr;
   font-size: 14px;
@@ -57,7 +54,6 @@
   border: none; /* ボーダーなし */
   background-color: white;
   color: black; /* テキストの色 */
-  // padding: 15px 32px; /* 内側の余白 */
   text-align: center; /* テキストの中央揃え */
   text-decoration: none; /* テキストの下線なし */
   display: flex; /* インラインブロック要素 */
@@ -76,6 +72,5 @@
 }
 
 .contactSub {
-  // display: inline-block;
   font-size: 8px;
 }
