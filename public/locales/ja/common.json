@@ -62,5 +62,34 @@
       "mission": "1.個人が自分を大切にできる社会をつくる\n2.個人が他人も大切にできる社会をつくる",
       "history": "2024.03 - :Futureship株式会社設立\n2024.04 - :フリースクール子供支援事業をリリース\n2024.05 - :地域イベントアート×食のフェスティバル『IRODORI』をリリース\n2024.06 - :小学生、未就学児童対象環境ワークショップ「Tシャツからエコバックを作ろう！」開催"
     }
+  },
+  "footer": {
+    "companyName": "Futureship",
+    "subTitle": "生きやすい社会を創る",
+    "menu": {
+      "base": {
+        "forAboutMe": "私たちについて",
+        "profile": "会社概要",
+        "vision": "vision",
+        "mission": "mission",
+        "message": "代表者メッセージ"
+      },
+      "service": {
+        "service": "service",
+        "service1": "つむぐ",
+        "service2": "ミラプロ"
+      },
+      "donation": {
+        "donation": "寄付について"
+      },
+      "recruitment": {
+        "recruitment": "採用情報"
+      },
+      "privacyPolicy": {
+        "privacyPolicy": "プライバシーポリシー"
+      }
+    },
+    "contact": "contact",
+    "contactMessage": "お問い合わせはこちら"
   }
 }
