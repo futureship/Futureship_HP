@@ -12,20 +12,32 @@ const Mission: React.FC = () => {
   const mission2 = t('mission.mission2');
   const message1 = t('mission.message.message1')
     .split('\n')
-    .map((line, index) => <div key={index}>{line}</div>);
+    .map((line, index) => (
+      <div className={styles.message} key={index}>
+        {line}
+      </div>
+    ));
   const message2 = t('mission.message.message2')
     .split('\n')
-    .map((line, index) => <div key={index}>{line}</div>);
+    .map((line, index) => (
+      <div className={styles.message} key={index}>
+        {line}
+      </div>
+    ));
   const message3 = t('mission.message.message3')
     .split('\n')
-    .map((line, index) => <div key={index}>{line}</div>);
+    .map((line, index) => (
+      <div className={styles.message} key={index}>
+        {line}
+      </div>
+    ));
 
   return (
     <div className={styles.container}>
-      <img src="/assets/svg/over-wave2.svg"></img>
+      <img className={styles.img} src="/assets/svg/over-wave2.svg"></img>
       <div className={styles.main}>
-        <div>
-          <div>{t('mission.mission')}</div>
+        <div className={styles.missionContents}>
+          <div className={styles.missionTitle}>{t('mission.mission')}</div>
           <div>
             <MissionNo
               src="/assets/svg/mission-number1.svg"
@@ -37,11 +49,13 @@ const Mission: React.FC = () => {
             ></MissionNo>
           </div>
         </div>
-        <div>{message1}</div>
-        <div>{message2}</div>
-        <div>{message3}</div>
+        {message1}
+        <br />
+        {message2}
+        <br />
+        {message3}
       </div>
-      <img src="/assets/svg/under-wave2.svg"></img>
+      <img className={styles.img} src="/assets/svg/under-wave2.svg"></img>
     </div>
   );
 };

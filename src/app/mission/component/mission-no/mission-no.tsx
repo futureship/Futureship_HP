@@ -5,8 +5,9 @@ import '@i18n';
 
 export const MissionNo = (props: { src: string; mission: string }) => {
   return (
-    <>
-      <img src={props.src}></img>;<div>{props.mission}</div>
-    </>
+    <div className={styles.contents}>
+      <img src={props.src}></img>
+      <span className={styles.message}>{props.mission}</span>
+    </div>
   );
 };
