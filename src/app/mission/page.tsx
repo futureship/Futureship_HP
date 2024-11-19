@@ -1,11 +1,11 @@
 'use client';
 
-import { MissionNo } from '@/app/pages/mission/component/mission-no/mission-no';
+import { MissionNo } from '@/app/mission/component/mission-no/mission-no';
 import styles from './mission.module.scss';
 import '@i18n';
 import { useTranslation } from 'react-i18next';
 
-export const Mission: React.FC = () => {
+const Mission: React.FC = () => {
   const { t } = useTranslation('common');
 
   const mission1 = t('mission.mission1');
@@ -45,3 +45,5 @@ export const Mission: React.FC = () => {
     </div>
   );
 };
+
+export default Mission;
