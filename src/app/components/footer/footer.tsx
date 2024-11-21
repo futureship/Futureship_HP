@@ -4,9 +4,15 @@ import React from 'react';
 import '@i18n';
 import { useTranslation } from 'react-i18next';
 import styles from './footer.module.scss';
+import { useRouter } from 'next/navigation';
 
 const Footer: React.FC = () => {
   const { t } = useTranslation('common');
+  const router = useRouter();
+
+  const onClickMission = () => {
+    router.push('/mission');
+  };
 
   return (
     <div className={styles.footer}>
@@ -23,7 +29,9 @@ const Footer: React.FC = () => {
           </div>
           <div>{t('footer.menu.base.profile')}</div>
           <div>{t('footer.menu.base.vision')}</div>
-          <div>{t('footer.menu.base.mission')}</div>
+          <div onClick={onClickMission} className={styles.cursorPointer}>
+            {t('footer.menu.base.mission')}
+          </div>
           <div>{t('footer.menu.base.message')}</div>
         </div>
 
