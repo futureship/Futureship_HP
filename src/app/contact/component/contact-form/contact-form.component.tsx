@@ -57,7 +57,7 @@ export const ContactForm: React.FC = () => {
           placeholder={t('contact.form.placeholder.position')}
         />
       </div>
-      <div>
+      <div className={styles.kind}>
         <h3 className={styles.kindTitle}>
           <span className={styles.must}>{t('contact.form.column.kind')}</span>
           <span>{t('contact.form.column.multiSelectable')}</span>
@@ -76,6 +76,24 @@ export const ContactForm: React.FC = () => {
         <span>{t('contact.form.kindSelect.staff')}</span>
         <input type="checkbox" />
         <span>{t('contact.form.kindSelect.other')}</span>
+      </div>
+      <div className={styles.contents}>
+        <h3 className={styles.kindTitle}>
+          <span className={styles.must}>
+            {t('contact.form.column.contents.title')}
+          </span>
+        </h3>
+        <div className={styles.description}>
+          {t('contact.form.column.contents.description')}
+        </div>
+        <input
+          className={styles.fileInput}
+          placeholder={t('contact.form.placeholder.contents.file')}
+        />
+        <textarea
+          className={styles.textarea}
+          placeholder={t('contact.form.placeholder.contents.textarea')}
+        />
       </div>
       <div>
         <input type="checkbox" />
