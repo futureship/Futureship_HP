@@ -7,8 +7,6 @@ import { useTranslation } from 'react-i18next';
 export const ContactForm: React.FC = () => {
   const { t } = useTranslation('common');
 
-  const mustMark = <span>*</span>;
-
   return (
     <div className={styles.formArea}>
       <h1 className={styles.title}>{t('contact.form.title')}</h1>
