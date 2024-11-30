@@ -1,0 +1,50 @@
+@import '@style/_color.const';
+@import '@style/common.module';
+
+.must {
+  &::after {
+    content: '*'; // 必須マーク
+    color: red; // 色を赤に設定
+    margin-left: 4px; // マージンを追加
+  }
+}
+
+.formArea {
+  width: 90%;
+  font-size: 16px;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+
+  padding: 32px 0 16px 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 4fr 7fr;
+  padding-bottom: 16px;
+}
+
+.inputTitle {
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  height: 48px;
+  padding-left: 8px;
+  background-color: $white3;
+  border: solid 1px;
+  border-color: $gray2;
+  border-radius: 5px;
+}
+
+.kindTitle {
+  font-size: 14px;
+  color: $gray3;
+  padding-bottom: 16px;
+}
