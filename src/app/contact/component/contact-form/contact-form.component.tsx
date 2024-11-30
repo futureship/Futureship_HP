@@ -95,12 +95,14 @@ export const ContactForm: React.FC = () => {
           placeholder={t('contact.form.placeholder.contents.textarea')}
         />
       </div>
-      <div>
+      <div className={styles.security}>
         <input type="checkbox" />
-        <a>{t('contact.form.confirmSecurity.link')}</a>
+        <a className={styles.securityLink}>
+          {t('contact.form.confirmSecurity.link')}
+        </a>
         <span>{t('contact.form.confirmSecurity.message')}</span>
       </div>
-      <button>{t('contact.form.confirm')}</button>
+      <button className={styles.confirm}>{t('contact.form.confirm')}</button>
     </div>
   );
 };
