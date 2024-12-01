@@ -9,7 +9,7 @@ import { ContactPreview } from '@/app/contact/component/contact-preview/contact-
 const Contact: React.FC = () => {
   const { t } = useTranslation('common');
 
-  const isEdit = true;
+  const isEdit = false;
 
   return (
     <div className={styles.backGround}>
