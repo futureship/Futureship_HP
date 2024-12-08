@@ -1,11 +1,22 @@
 'use client';
 
+import { useContactViewModel } from '@/app/contact/contact.store';
 import styles from './contact-form.module.scss';
 import '@i18n';
 import { useTranslation } from 'react-i18next';
 
 export const ContactForm: React.FC = () => {
   const { t } = useTranslation('common');
+  const {
+    updateIsEdit,
+    updateName,
+    updateEmail,
+    updatePhone,
+    updatePlace,
+    updatePosition,
+    updateKind,
+    updateContents,
+  } = useContactViewModel();
 
   return (
     <div className={styles.formArea}>
@@ -16,6 +27,9 @@ export const ContactForm: React.FC = () => {
         </span>
         <input
           className={styles.input}
+          onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+            updateName(event.target.value)
+          }
           placeholder={t('contact.form.placeholder.name')}
         />
       </div>
@@ -25,6 +39,9 @@ export const ContactForm: React.FC = () => {
         </span>
         <input
           className={styles.input}
+          onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+            updateEmail(event.target.value)
+          }
           placeholder={t('contact.form.placeholder.email')}
         />
       </div>
@@ -34,6 +51,9 @@ export const ContactForm: React.FC = () => {
         </span>
         <input
           className={styles.input}
+          onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+            updatePhone(event.target.value)
+          }
           placeholder={t('contact.form.placeholder.phone')}
         />
       </div>
@@ -43,6 +63,9 @@ export const ContactForm: React.FC = () => {
         </span>
         <input
           className={styles.input}
+          onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+            updatePlace(event.target.value)
+          }
           placeholder={t('contact.form.placeholder.place')}
         />
       </div>
@@ -52,6 +75,9 @@ export const ContactForm: React.FC = () => {
         </span>
         <input
           className={styles.input}
+          onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+            updatePosition(event.target.value)
+          }
           placeholder={t('contact.form.placeholder.position')}
         />
       </div>
@@ -100,7 +126,9 @@ export const ContactForm: React.FC = () => {
         </a>
         <span>{t('contact.form.confirmSecurity.message')}</span>
       </div>
-      <button className={styles.confirm}>{t('contact.form.confirm')}</button>
+      <button className={styles.confirm} onClick={() => updateIsEdit(false)}>
+        {t('contact.form.confirm')}
+      </button>
     </div>
   );
 };

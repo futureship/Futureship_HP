@@ -9,6 +9,7 @@ import {
   placeAtom,
   positionAtom,
 } from './contact.atom';
+import { ContactKindSet } from '@/app/contact/contact.const';
 
 export const useContactViewModel = () => {
   const [name, setName] = useAtom(nameAtom);
@@ -27,7 +28,7 @@ export const useContactViewModel = () => {
   const updatePhone = (newPhone: string) => setPhone(newPhone);
   const updatePlace = (newPlace: string) => setPlace(newPlace);
   const updatePosition = (newPosition: string) => setPosition(newPosition);
-  const updateKind = (newKind: []) => setKind(newKind);
+  const updateKind = (newKind: ContactKindSet) => setKind(newKind);
   const updateContents = (newContents: string) => setContents(newContents);
   const updateIsEdit = (newIsEdit: boolean) => setIsEdit(newIsEdit);
 
