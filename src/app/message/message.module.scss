@@ -28,16 +28,17 @@
 .template {
   @include boxShadow;
 
-  padding: 30px;
+  padding: 50px 50px 0 50px;
   margin: 0 30px;
   width: 50%;
   border-radius: 40px;
+  overflow-x: hidden;
 }
 
 .button {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  // align-items: center;
 }
 
 .expandButton {

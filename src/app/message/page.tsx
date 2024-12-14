@@ -25,11 +25,13 @@ const Message: React.FC = () => {
         <div className={styles.faceImg}></div>
         <div className={styles.template}>
           <ReactMarkdown>{markdown}</ReactMarkdown>
+          <div className={styles.button}>
+            <button className={styles.expandButton}>+</button>
+            <span className={styles.buttonMessage}>
+              {t('message.readMore')}
+            </span>
+          </div>
         </div>
-      </div>
-      <div className={styles.button}>
-        <button className={styles.expandButton}>+</button>
-        <span className={styles.buttonMessage}>{t('message.readMore')}</span>
       </div>
     </div>
   );
