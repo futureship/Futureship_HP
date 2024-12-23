@@ -4,32 +4,3 @@
 .servicePage {
   @include fontOnest;
 }
-
-.serviceTitle {
-  background: linear-gradient(135deg, $water-blue1, $pink1);
-  background-clip: text;
-  color: transparent;
-  font-size: 34px;
-  font-weight: 900;
-  width: 150px;
-  padding: 20px 0;
-  margin-left: 12%;
-}
-
-.container {
-  display: flex;
-  justify-content: center;
-  width: 50%;
-}
-
-.service1 {
-  display: flex;
-  justify-content: center;
-  padding-bottom: 60px;
-}
-
-.service2 {
-  display: flex;
-  justify-content: center;
-  padding-bottom: 60px;
-}
