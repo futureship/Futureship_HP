@@ -10,8 +10,36 @@ const Footer: React.FC = () => {
   const { t } = useTranslation('common');
   const router = useRouter();
 
-  const onClickMission = () => {
-    router.push('/mission');
+  // const onClickMission = () => {
+  //   router.push('/mission');
+  // };
+
+  const onClickProfile = () => {
+    router.push('/profile');
+  };
+
+  // const onClickVision = () => {
+  //   router.push('/vision');
+  // };
+
+  const onClickPolicy = () => {
+    router.push('/policy');
+  };
+
+  const onClickService = () => {
+    router.push('/service');
+  };
+
+  const onClickRecruit = () => {
+    router.push('/recruit');
+  };
+
+  const onClickPrivacyPolicy = () => {
+    router.push('/privacy');
+  };
+
+  const onClickContact = () => {
+    router.push('/contact');
   };
 
   return (
@@ -29,14 +57,16 @@ const Footer: React.FC = () => {
           </div>
           <div>{t('footer.menu.base.profile')}</div>
           <div>{t('footer.menu.base.vision')}</div>
-          <div onClick={onClickMission} className={styles.cursorPointer}>
+          <div className={styles.cursorPointer}>
             {t('footer.menu.base.mission')}
           </div>
-          <div>{t('footer.menu.base.message')}</div>
+          <div className={styles.cursorPointer} onClick={onClickPolicy}>
+            {t('footer.menu.base.message')}
+          </div>
         </div>
 
         <div className={styles.menuCategory}>
-          <div className={styles.menuCategoryTitle}>
+          <div className={styles.menuCategoryTitle} onClick={onClickService}>
             {t('footer.menu.service.service')}
           </div>
           <div>{t('footer.menu.service.service1')}</div>
@@ -50,19 +80,22 @@ const Footer: React.FC = () => {
         </div>
 
         <div className={styles.menuCategory}>
-          <div className={styles.menuCategoryTitle}>
+          <div className={styles.menuCategoryTitle} onClick={onClickRecruit}>
             {t('footer.menu.recruitment.recruitment')}
           </div>
         </div>
 
         <div className={styles.menuCategory}>
-          <div className={styles.menuCategoryTitle}>
+          <div
+            className={styles.menuCategoryTitle}
+            onClick={onClickPrivacyPolicy}
+          >
             {t('footer.menu.privacyPolicy.privacyPolicy')}
           </div>
         </div>
       </div>
       <div className={styles.contactArea}>
-        <button className={styles.contact}>
+        <button className={styles.contact} onClick={onClickContact}>
           <span className={styles.contactMsg}>{t('footer.contact')}</span>
           <span className={styles.contactSub}>
             {t('footer.contactMessage')}
