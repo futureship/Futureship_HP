@@ -56,21 +56,29 @@ const Footer: React.FC = () => {
           <div className={styles.menuCategoryTitle}>
             {t('footer.menu.base.forAboutMe')}
           </div>
-          <div className={styles.cursorPointer} onClick={onClickProfile}>
-            {t('footer.menu.base.profile')}
+          <div>
+            <span className={styles.cursorPointer} onClick={onClickProfile}>
+              {t('footer.menu.base.profile')}
+            </span>
           </div>
           <div>{t('footer.menu.base.vision')}</div>
-          <div className={styles.cursorPointer}>
-            {t('footer.menu.base.mission')}
+          <div>
+            <span className={styles.cursorPointer}>
+              {t('footer.menu.base.mission')}
+            </span>
           </div>
-          <div className={styles.cursorPointer} onClick={onClickPolicy}>
-            {t('footer.menu.base.message')}
+          <div>
+            <span className={styles.cursorPointer} onClick={onClickPolicy}>
+              {t('footer.menu.base.message')}
+            </span>
           </div>
         </div>
 
         <div className={styles.menuCategory}>
-          <div className={styles.menuCategoryTitle} onClick={onClickService}>
-            {t('footer.menu.service.service')}
+          <div>
+            <span className={styles.cursorPointer} onClick={onClickService}>
+              {t('footer.menu.service.service')}
+            </span>
           </div>
           <div>{t('footer.menu.service.service1')}</div>
           <div>{t('footer.menu.service.service2')}</div>
@@ -83,17 +91,18 @@ const Footer: React.FC = () => {
         </div>
 
         <div className={styles.menuCategory}>
-          <div className={styles.menuCategoryTitle} onClick={onClickRecruit}>
-            {t('footer.menu.recruitment.recruitment')}
+          <div className={styles.menuCategoryTitle}>
+            <span className={styles.cursorPointer} onClick={onClickRecruit}>
+              {t('footer.menu.recruitment.recruitment')}
+            </span>
           </div>
         </div>
 
         <div className={styles.menuCategory}>
-          <div
-            className={styles.menuCategoryTitle}
-            onClick={onClickPrivacyPolicy}
-          >
-            {t('footer.menu.privacyPolicy.privacyPolicy')}
+          <div className={styles.menuCategoryTitle}>
+            <span className={styles.cursorPointer}>
+              {t('footer.menu.privacyPolicy.privacyPolicy')}
+            </span>
           </div>
         </div>
       </div>
