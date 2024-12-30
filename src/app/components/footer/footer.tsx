@@ -10,14 +10,9 @@ const Footer: React.FC = () => {
   const { t } = useTranslation('common');
   const router = useRouter();
 
-  // TODO ogawa: 以下の2つのpathをどうするか相談
-  // const onClickMission = () => {
-  //   router.push('/mission');
-  // };
-
-  // const onClickVision = () => {
-  //   router.push('/vision');
-  // };
+  const onClickMission = () => {
+    router.push('/mission');
+  };
 
   const onClickProfile = () => {
     router.push('/profile');
@@ -61,9 +56,8 @@ const Footer: React.FC = () => {
               {t('footer.menu.base.profile')}
             </span>
           </div>
-          <div>{t('footer.menu.base.vision')}</div>
           <div>
-            <span className={styles.cursorPointer}>
+            <span className={styles.cursorPointer} onClick={onClickMission}>
               {t('footer.menu.base.mission')}
             </span>
           </div>
