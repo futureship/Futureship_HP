@@ -55,7 +55,9 @@ const Footer: React.FC = () => {
           <div className={styles.menuCategoryTitle}>
             {t('footer.menu.base.forAboutMe')}
           </div>
-          <div>{t('footer.menu.base.profile')}</div>
+          <div className={styles.cursorPointer} onClick={onClickProfile}>
+            {t('footer.menu.base.profile')}
+          </div>
           <div>{t('footer.menu.base.vision')}</div>
           <div className={styles.cursorPointer}>
             {t('footer.menu.base.mission')}
