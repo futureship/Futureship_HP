@@ -69,7 +69,7 @@ const Footer: React.FC = () => {
         </div>
 
         <div className={styles.menuCategory}>
-          <div>
+          <div className={styles.menuCategoryTitle}>
             <span className={styles.cursorPointer} onClick={onClickService}>
               {t('footer.menu.service.service')}
             </span>
