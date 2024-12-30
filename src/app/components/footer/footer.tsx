@@ -100,7 +100,10 @@ const Footer: React.FC = () => {
 
         <div className={styles.menuCategory}>
           <div className={styles.menuCategoryTitle}>
-            <span className={styles.cursorPointer}>
+            <span
+              className={styles.cursorPointer}
+              onClick={onClickPrivacyPolicy}
+            >
               {t('footer.menu.privacyPolicy.privacyPolicy')}
             </span>
           </div>
