@@ -10,17 +10,18 @@ const Footer: React.FC = () => {
   const { t } = useTranslation('common');
   const router = useRouter();
 
+  // TODO ogawa: 以下の2つのpathをどうするか相談
   // const onClickMission = () => {
   //   router.push('/mission');
+  // };
+
+  // const onClickVision = () => {
+  //   router.push('/vision');
   // };
 
   const onClickProfile = () => {
     router.push('/profile');
   };
-
-  // const onClickVision = () => {
-  //   router.push('/vision');
-  // };
 
   const onClickPolicy = () => {
     router.push('/policy');
