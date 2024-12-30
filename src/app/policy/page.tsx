@@ -2,12 +2,12 @@
 
 import React, { useEffect, useState } from 'react';
 import '@i18n';
-import styles from './message.module.scss';
+import styles from './policy.module.scss';
 import ReactMarkdown from 'react-markdown';
 
 import { useTranslation } from 'react-i18next';
 
-const Message: React.FC = () => {
+const Policy: React.FC = () => {
   const [markdown, setMarkdown] = useState<string>('');
 
   useEffect(() => {
@@ -36,4 +36,4 @@ const Message: React.FC = () => {
     </div>
   );
 };
-export default Message;
+export default Policy;
