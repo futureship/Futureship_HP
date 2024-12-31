@@ -14,6 +14,30 @@ const Footer: React.FC = () => {
     router.push('/mission');
   };
 
+  const onClickProfile = () => {
+    router.push('/profile');
+  };
+
+  const onClickPolicy = () => {
+    router.push('/policy');
+  };
+
+  const onClickService = () => {
+    router.push('/service');
+  };
+
+  const onClickRecruit = () => {
+    router.push('/recruit');
+  };
+
+  const onClickPrivacyPolicy = () => {
+    router.push('/privacy');
+  };
+
+  const onClickContact = () => {
+    router.push('/contact');
+  };
+
   return (
     <div className={styles.footer}>
       <div className={styles.curve}></div>
@@ -27,17 +51,28 @@ const Footer: React.FC = () => {
           <div className={styles.menuCategoryTitle}>
             {t('footer.menu.base.forAboutMe')}
           </div>
-          <div>{t('footer.menu.base.profile')}</div>
-          <div>{t('footer.menu.base.vision')}</div>
-          <div onClick={onClickMission} className={styles.cursorPointer}>
-            {t('footer.menu.base.mission')}
+          <div>
+            <span className={styles.cursorPointer} onClick={onClickProfile}>
+              {t('footer.menu.base.profile')}
+            </span>
           </div>
-          <div>{t('footer.menu.base.message')}</div>
+          <div>
+            <span className={styles.cursorPointer} onClick={onClickMission}>
+              {t('footer.menu.base.mission')}
+            </span>
+          </div>
+          <div>
+            <span className={styles.cursorPointer} onClick={onClickPolicy}>
+              {t('footer.menu.base.message')}
+            </span>
+          </div>
         </div>
 
         <div className={styles.menuCategory}>
           <div className={styles.menuCategoryTitle}>
-            {t('footer.menu.service.service')}
+            <span className={styles.cursorPointer} onClick={onClickService}>
+              {t('footer.menu.service.service')}
+            </span>
           </div>
           <div>{t('footer.menu.service.service1')}</div>
           <div>{t('footer.menu.service.service2')}</div>
@@ -51,18 +86,25 @@ const Footer: React.FC = () => {
 
         <div className={styles.menuCategory}>
           <div className={styles.menuCategoryTitle}>
-            {t('footer.menu.recruitment.recruitment')}
+            <span className={styles.cursorPointer} onClick={onClickRecruit}>
+              {t('footer.menu.recruitment.recruitment')}
+            </span>
           </div>
         </div>
 
         <div className={styles.menuCategory}>
           <div className={styles.menuCategoryTitle}>
-            {t('footer.menu.privacyPolicy.privacyPolicy')}
+            <span
+              className={styles.cursorPointer}
+              onClick={onClickPrivacyPolicy}
+            >
+              {t('footer.menu.privacyPolicy.privacyPolicy')}
+            </span>
           </div>
         </div>
       </div>
       <div className={styles.contactArea}>
-        <button className={styles.contact}>
+        <button className={styles.contact} onClick={onClickContact}>
           <span className={styles.contactMsg}>{t('footer.contact')}</span>
           <span className={styles.contactSub}>
             {t('footer.contactMessage')}
