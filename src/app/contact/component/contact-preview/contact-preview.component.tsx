@@ -1,13 +1,13 @@
 'use client';
 
-import { useContactViewModel } from '@/app/contact/contact.store';
+import { useContactViewModel } from '@/app/contact/store/contact.store';
 import styles from './contact-preview.module.scss';
 import '@i18n';
 import { useTranslation } from 'react-i18next';
 import {
   contactKindEnumKeys,
   ContactKindSet,
-} from '@/app/contact/contact.const';
+} from '@/app/contact/store/contact.const';
 
 export const ContactPreview: React.FC = () => {
   const { t } = useTranslation('common');
