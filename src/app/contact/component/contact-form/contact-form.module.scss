@@ -91,6 +91,13 @@
       font-size: 12px;
       color: $water-blue1;
     }
+
+    .deleteFile {
+      cursor: pointer;
+      margin-left: 4px;
+      color: $pink1;
+      font-size: 14px;
+    }
   }
 
   .textarea {
