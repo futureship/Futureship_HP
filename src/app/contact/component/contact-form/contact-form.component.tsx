@@ -31,7 +31,7 @@ export const ContactForm: React.FC = () => {
   const { getRootProps, getInputProps } = useDropzone({ onDrop });
 
   const filesName = files.map((file: File) => (
-    <div className={styles.fileName}>{file.name}</div>
+    <div className={styles.fileName}>・{file.name}</div>
   ));
 
   return (
