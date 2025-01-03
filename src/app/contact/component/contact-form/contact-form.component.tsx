@@ -19,6 +19,7 @@ export const ContactForm: React.FC = () => {
     updateContents,
     files,
     addFiles,
+    deleteFile,
   } = useContactViewModel();
   const MAX_TOTAL_SIZE = 5 * 1024 * 1024; // 最大合計サイズを5MBに設定
 
@@ -30,8 +31,13 @@ export const ContactForm: React.FC = () => {
 
   const { getRootProps, getInputProps } = useDropzone({ onDrop });
 
-  const filesName = files.map((file: File) => (
-    <div className={styles.fileName}>・{file.name}</div>
+  const filesName = files.map((file: File, index: number) => (
+    <div key={index} className={styles.fileName}>
+      <span>・{file.name}</span>
+      <span onClick={() => deleteFile(index)} className={styles.deleteFile}>
+        ×
+      </span>
+    </div>
   ));
 
   return (

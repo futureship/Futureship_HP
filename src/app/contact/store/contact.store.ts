@@ -38,6 +38,11 @@ export const useContactViewModel = () => {
     const newFile = _.cloneDeep(files);
     setFiles(newFile.concat(newFiles));
   };
+  const deleteFile = (index: number) => {
+    const fileList = _.cloneDeep(files);
+    fileList.splice(index, 1);
+    setFiles(fileList);
+  };
   const updateIsEdit = (newIsEdit: boolean) => setIsEdit(newIsEdit);
 
   return {
@@ -57,6 +62,7 @@ export const useContactViewModel = () => {
     updateContents,
     files,
     addFiles,
+    deleteFile,
     isEdit,
     updateIsEdit,
   };
