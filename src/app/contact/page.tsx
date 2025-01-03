@@ -4,7 +4,7 @@ import { ContactForm } from '@/app/contact/component/contact-form/contact-form.c
 import styles from './contact.module.scss';
 import '@i18n';
 import { ContactPreview } from '@/app/contact/component/contact-preview/contact-preview.component';
-import { useContactViewModel } from '@/app/contact/contact.store';
+import { useContactViewModel } from '@/app/contact/store/contact.store';
 
 const Contact: React.FC = () => {
   const { isEdit } = useContactViewModel();
