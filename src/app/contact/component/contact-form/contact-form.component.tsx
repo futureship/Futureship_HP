@@ -1,9 +1,10 @@
 'use client';
 
-import { useContactViewModel } from '@/app/contact/contact.store';
+import { useContactViewModel } from '@/app/contact/store/contact.store';
 import styles from './contact-form.module.scss';
 import '@i18n';
 import { useTranslation } from 'react-i18next';
+import { useDropzone } from 'react-dropzone';
 
 export const ContactForm: React.FC = () => {
   const { t } = useTranslation('common');
@@ -16,7 +17,22 @@ export const ContactForm: React.FC = () => {
     updatePosition,
     updateKind,
     updateContents,
+    files,
+    addFiles,
   } = useContactViewModel();
+  const MAX_TOTAL_SIZE = 5 * 1024 * 1024; // 最大合計サイズを5MBに設定
+
+  const onDrop = (acceptedFiles: File[]) => {
+    addFiles(acceptedFiles);
+    const totalSize = acceptedFiles.reduce((acc, file) => acc + file.size, 0);
+    console.log('受け取ったファイルサイズ', totalSize);
+  };
+
+  const { getRootProps, getInputProps } = useDropzone({ onDrop });
+
+  const filesName = files.map((file: File) => (
+    <div className={styles.fileName}>・{file.name}</div>
+  ));
 
   return (
     <div className={styles.formArea}>
@@ -110,10 +126,11 @@ export const ContactForm: React.FC = () => {
         <div className={styles.description}>
           {t('contact.form.column.contents.description')}
         </div>
-        <input
-          className={styles.fileInput}
-          placeholder={t('contact.form.placeholder.contents.file')}
-        />
+        <div {...getRootProps({ className: styles.fileInput })}>
+          <input {...getInputProps()} />
+          <p>{t('contact.form.placeholder.contents.file')}</p>
+        </div>
+        <div className={styles.filesName}>{filesName}</div>
         <textarea
           className={styles.textarea}
           placeholder={t('contact.form.placeholder.contents.textarea')}

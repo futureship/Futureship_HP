@@ -2,6 +2,7 @@ import { useAtom } from 'jotai';
 import {
   contentsAtom,
   emailAtom,
+  filesAtom,
   isEditAtom,
   kindAtom,
   nameAtom,
@@ -9,7 +10,9 @@ import {
   placeAtom,
   positionAtom,
 } from './contact.atom';
-import { ContactKindSet } from '@/app/contact/contact.const';
+import { ContactKindSet } from '@/app/contact/store/contact.const';
+import _ from 'lodash';
+// import cloneDeep from 'lodash/cloneDeep';
 
 export const useContactViewModel = () => {
   const [name, setName] = useAtom(nameAtom);
@@ -19,6 +22,7 @@ export const useContactViewModel = () => {
   const [position, setPosition] = useAtom(positionAtom);
   const [kind, setKind] = useAtom(kindAtom);
   const [contents, setContents] = useAtom(contentsAtom);
+  const [files, setFiles] = useAtom(filesAtom);
   const [isEdit, setIsEdit] = useAtom(isEditAtom);
 
   // const increment = () => setCount((prev) => prev + 1);
@@ -30,6 +34,10 @@ export const useContactViewModel = () => {
   const updatePosition = (newPosition: string) => setPosition(newPosition);
   const updateKind = (newKind: ContactKindSet) => setKind(newKind);
   const updateContents = (newContents: string) => setContents(newContents);
+  const addFiles = (newFiles: File[]) => {
+    const newFile = _.cloneDeep(files);
+    setFiles(newFile.concat(newFiles));
+  };
   const updateIsEdit = (newIsEdit: boolean) => setIsEdit(newIsEdit);
 
   return {
@@ -47,6 +55,8 @@ export const useContactViewModel = () => {
     updateKind,
     contents,
     updateContents,
+    files,
+    addFiles,
     isEdit,
     updateIsEdit,
   };

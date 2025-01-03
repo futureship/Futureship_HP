@@ -1,18 +1,27 @@
 'use client';
 
-import { useContactViewModel } from '@/app/contact/contact.store';
+import { useContactViewModel } from '@/app/contact/store/contact.store';
 import styles from './contact-preview.module.scss';
 import '@i18n';
 import { useTranslation } from 'react-i18next';
 import {
   contactKindEnumKeys,
   ContactKindSet,
-} from '@/app/contact/contact.const';
+} from '@/app/contact/store/contact.const';
 
 export const ContactPreview: React.FC = () => {
   const { t } = useTranslation('common');
-  const { updateIsEdit, name, email, phone, place, position, kind, contents } =
-    useContactViewModel();
+  const {
+    updateIsEdit,
+    name,
+    email,
+    phone,
+    place,
+    position,
+    kind,
+    contents,
+    files,
+  } = useContactViewModel();
 
   const kindPreviewList = [];
   contactKindEnumKeys().forEach((key) => {
@@ -21,6 +30,11 @@ export const ContactPreview: React.FC = () => {
     }
   });
   // const kindPreview = kindPreviewList.
+
+  const addedFiles = files.map((file) => (
+    <div className={styles.files}>{file.name}</div>
+  ));
+
   return (
     <div className={styles.previewArea}>
       <div className={styles.title}>{t('contact.check.title')}</div>
@@ -65,7 +79,10 @@ export const ContactPreview: React.FC = () => {
         <span className={styles.columnName}>
           {t('contact.check.column.contents')}
         </span>
-        <span className={styles.columnContents}>{contents}</span>
+        <span className={styles.columnContents}>
+          {contents}
+          {addedFiles}
+        </span>
       </div>
       <button className={styles.edit} onClick={() => updateIsEdit(true)}>
         {t('contact.check.button.edit')}
