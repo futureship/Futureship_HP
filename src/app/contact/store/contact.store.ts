@@ -11,6 +11,8 @@ import {
   positionAtom,
 } from './contact.atom';
 import { ContactKindSet } from '@/app/contact/store/contact.const';
+import _ from 'lodash';
+// import cloneDeep from 'lodash/cloneDeep';
 
 export const useContactViewModel = () => {
   const [name, setName] = useAtom(nameAtom);
@@ -32,7 +34,10 @@ export const useContactViewModel = () => {
   const updatePosition = (newPosition: string) => setPosition(newPosition);
   const updateKind = (newKind: ContactKindSet) => setKind(newKind);
   const updateContents = (newContents: string) => setContents(newContents);
-  const updateFiles = (newFiles: File[]) => setFiles(newFiles);
+  const addFiles = (newFiles: File[]) => {
+    const newFile = _.cloneDeep(files);
+    setFiles(newFile.concat(newFiles));
+  };
   const updateIsEdit = (newIsEdit: boolean) => setIsEdit(newIsEdit);
 
   return {
@@ -51,7 +56,7 @@ export const useContactViewModel = () => {
     contents,
     updateContents,
     files,
-    updateFiles,
+    addFiles,
     isEdit,
     updateIsEdit,
   };

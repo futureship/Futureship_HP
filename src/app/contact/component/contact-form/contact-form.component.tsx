@@ -18,12 +18,12 @@ export const ContactForm: React.FC = () => {
     updateKind,
     updateContents,
     files,
-    updateFiles,
+    addFiles,
   } = useContactViewModel();
   const MAX_TOTAL_SIZE = 5 * 1024 * 1024; // 最大合計サイズを5MBに設定
 
   const onDrop = (acceptedFiles: File[]) => {
-    updateFiles(acceptedFiles);
+    addFiles(acceptedFiles);
     const totalSize = acceptedFiles.reduce((acc, file) => acc + file.size, 0);
     console.log('受け取ったファイルサイズ', totalSize);
   };
