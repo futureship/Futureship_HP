@@ -23,13 +23,13 @@ export const ContactPreview: React.FC = () => {
     files,
   } = useContactViewModel();
 
-  const kindPreviewList = [];
+  const kindPreviewList: string[] = [];
   contactKindEnumKeys().forEach((key) => {
     if (kind[key as keyof ContactKindSet]) {
       kindPreviewList.push(t(`contact.form.kindSelect.${key}`));
     }
   });
-  // const kindPreview = kindPreviewList.
+  const kindPreview = kindPreviewList.join('、');
 
   const addedFiles = files.map((file) => (
     <div className={styles.files}>{file.name}</div>
@@ -73,7 +73,7 @@ export const ContactPreview: React.FC = () => {
         <span className={styles.columnName}>
           {t('contact.check.column.kind')}
         </span>
-        <span className={styles.columnContents}>{}</span>
+        <span className={styles.columnContents}>{kindPreview}</span>
       </div>
       <div className={styles.preview}>
         <span className={styles.columnName}>
