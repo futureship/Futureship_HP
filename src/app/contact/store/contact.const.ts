@@ -18,10 +18,3 @@ export const initialContactKindSet = (): ContactKindSet => {
   const keys = Object.keys(ContactKindEnum);
   return Object.fromEntries([keys].map((key) => [key, false]));
 };
-
-// export const initialContactKindSet: ContactKindSet = Object.keys(
-//   ContactKindEnum
-// ).reduce((acc, key) => {
-//   acc[key as keyof ContactKindEnum] = false;
-//   return acc;
-// }, {} as ContactKindSet);

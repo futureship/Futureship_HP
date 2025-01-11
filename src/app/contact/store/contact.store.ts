@@ -32,7 +32,9 @@ export const useContactViewModel = () => {
   const updatePhone = (newPhone: string) => setPhone(newPhone);
   const updatePlace = (newPlace: string) => setPlace(newPlace);
   const updatePosition = (newPosition: string) => setPosition(newPosition);
-  const updateKind = (newKind: ContactKindSet) => setKind(newKind);
+  const updateKind = (newKind: ContactKindSet) => {
+    setKind(newKind);
+  };
   const updateContents = (newContents: string) => setContents(newContents);
   const addFiles = (newFiles: File[]) => {
     const newFile = _.cloneDeep(files);

@@ -15,6 +15,7 @@ export const ContactForm: React.FC = () => {
     updatePhone,
     updatePlace,
     updatePosition,
+    kind,
     updateKind,
     updateContents,
     files,
@@ -108,19 +109,43 @@ export const ContactForm: React.FC = () => {
           <span className={styles.must}>{t('contact.form.column.kind')}</span>
           <span>{t('contact.form.column.multiSelectable')}</span>
         </h3>
-        <input type="checkbox" />
+        <input
+          type="checkbox"
+          onClick={() => updateKind({ ...kind, homepage: !kind.homepage })}
+          checked={kind.homepage}
+        />
         <span>{t('contact.form.kindSelect.homepage')}</span>
-        <input type="checkbox" />
+        <input
+          type="checkbox"
+          onClick={() => updateKind({ ...kind, service: !kind.service })}
+          checked={kind.service}
+        />
         <span>{t('contact.form.kindSelect.service')}</span>
-        <input type="checkbox" />
+        <input
+          type="checkbox"
+          onClick={() => updateKind({ ...kind, article: !kind.article })}
+          checked={kind.article}
+        />
         <span>{t('contact.form.kindSelect.article')}</span>
         <br />
-        <input type="checkbox" />
+        <input
+          type="checkbox"
+          onClick={() => updateKind({ ...kind, media: !kind.media })}
+          checked={kind.media}
+        />
         <span>{t('contact.form.kindSelect.media')}</span>
         <br />
-        <input type="checkbox" />
+        <input
+          type="checkbox"
+          onClick={() => updateKind({ ...kind, staff: !kind.staff })}
+          checked={kind.staff}
+        />
         <span>{t('contact.form.kindSelect.staff')}</span>
-        <input type="checkbox" />
+        <input
+          type="checkbox"
+          onClick={() => updateKind({ ...kind, other: !kind.other })}
+          checked={kind.other}
+        />
         <span>{t('contact.form.kindSelect.other')}</span>
       </div>
       <div className={styles.contents}>
