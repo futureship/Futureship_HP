@@ -5,23 +5,43 @@ import styles from './contact-form.module.scss';
 import '@i18n';
 import { useTranslation } from 'react-i18next';
 import { useDropzone } from 'react-dropzone';
+import { useContactValidateStatusViewModel } from '@/app/contact/validator/contact-validate-status.store';
+import { ContentsValidator } from '@/app/contact/validator/contact.validator';
 
 export const ContactForm: React.FC = () => {
   const { t } = useTranslation('common');
   const {
     updateIsEdit,
+    name,
     updateName,
+    email,
     updateEmail,
+    phone,
     updatePhone,
     updatePlace,
     updatePosition,
     kind,
     updateKind,
+    contents,
     updateContents,
     files,
     addFiles,
     deleteFile,
   } = useContactViewModel();
+
+  const {
+    nameValidatorStatus,
+    updateNameValidatorStatus,
+    emailValidatorStatus,
+    updateEmailValidatorStatus,
+    phoneValidatorStatus,
+    updatePhoneValidatorStatus,
+    kindValidatorStatus,
+    updateKindValidatorStatus,
+    contentsValidatorStatus,
+    updateContentsValidatorStatus,
+    isExistsValidatorError,
+  } = useContactValidateStatusViewModel();
   const MAX_TOTAL_SIZE = 5 * 1024 * 1024; // 最大合計サイズを5MBに設定
 
   const onDrop = (acceptedFiles: File[]) => {
@@ -40,6 +60,31 @@ export const ContactForm: React.FC = () => {
       </span>
     </div>
   ));
+
+  const onClickConfirm = () => {
+    setValidatorStatus();
+    if (!isExistsValidatorError()) {
+      updateIsEdit(false);
+    }
+  };
+
+  function setValidatorStatus() {
+    updateNameValidatorStatus(
+      ContentsValidator.getContactNameValidateErrorCode(name)
+    );
+    updateEmailValidatorStatus(
+      ContentsValidator.getContactEmailValidateErrorCode(email)
+    );
+    updatePhoneValidatorStatus(
+      ContentsValidator.getContactPhoneValidateErrorCode(phone)
+    );
+    updateKindValidatorStatus(
+      ContentsValidator.getContactKindValidateErrorCode(kind)
+    );
+    updateContentsValidatorStatus(
+      ContentsValidator.getContactContentsValidateErrorCode(contents, files)
+    );
+  }
 
   return (
     <div className={styles.formArea}>
@@ -177,7 +222,7 @@ export const ContactForm: React.FC = () => {
         </a>
         <span>{t('contact.form.confirmSecurity.message')}</span>
       </div>
-      <button className={styles.confirm} onClick={() => updateIsEdit(false)}>
+      <button className={styles.confirm} onClick={() => onClickConfirm()}>
         {t('contact.form.confirm')}
       </button>
     </div>

@@ -20,7 +20,6 @@ export type ContactEmailValidateError =
 
 export const ContactPhoneValidateError = {
   noError: 0,
-
   phoneEmpty: 4,
   phoneInvalid: 5,
 } as const;
@@ -42,58 +41,60 @@ export const ContactContentsValidateError = {
 export type ContactContentsValidateError =
   (typeof ContactContentsValidateError)[keyof typeof ContactContentsValidateError];
 
-export function getContactNameValidateErrorCode(name: string) {
-  if (name === '-') {
-    return ContactNameValidateError.nameEmpty;
-  }
-  return ContactNameValidateError.noError;
-}
-
-export function getContactEmailValidateErrorCode(email: string) {
-  if (email === '-') {
-    return ContactEmailValidateError.emailEmpty;
+export namespace ContentsValidator {
+  export function getContactNameValidateErrorCode(name: string) {
+    if (name === '-') {
+      return ContactNameValidateError.nameEmpty;
+    }
+    return ContactNameValidateError.noError;
   }
 
-  if (!checkEmailPattern(email)) {
-    return ContactEmailValidateError.emailInvalid;
+  export function getContactEmailValidateErrorCode(email: string) {
+    if (email === '-') {
+      return ContactEmailValidateError.emailEmpty;
+    }
+
+    if (!checkEmailPattern(email)) {
+      return ContactEmailValidateError.emailInvalid;
+    }
+
+    return ContactEmailValidateError.noError;
   }
 
-  return ContactEmailValidateError.noError;
-}
+  export function getContactPhoneValidateErrorCode(phone: string) {
+    if (phone === '') {
+      return ContactPhoneValidateError.phoneEmpty;
+    }
 
-export function getContactPhoneValidateErrorCode(phone: string) {
-  if (phone === '') {
-    return ContactPhoneValidateError.phoneEmpty;
+    if (!checkPhonePattern(phone)) {
+      return ContactPhoneValidateError.phoneInvalid;
+    }
+
+    return ContactPhoneValidateError.noError;
   }
 
-  if (!checkPhonePattern(phone)) {
-    return ContactPhoneValidateError.phoneInvalid;
+  export function getContactKindValidateErrorCode(kind: ContactKindSet) {
+    const isExistsContactKind = contactKindEnumKeys().some((key) => {
+      return kind[key as keyof ContactKindSet];
+    });
+
+    if (!isExistsContactKind) {
+      return ContactKindValidateError.kindEmpty;
+    }
+
+    return ContactKindValidateError.noError;
   }
 
-  return ContactPhoneValidateError.noError;
-}
+  export function getContactContentsValidateErrorCode(
+    contents: string,
+    files: File[]
+  ) {
+    if (contents === '' && files.length === 0) {
+      return ContactContentsValidateError.contentsEmpty;
+    }
 
-export function getContactKindValidateErrorCode(kind: ContactKindSet) {
-  const isExistsContactKind = contactKindEnumKeys().some((key) => {
-    return kind[key as keyof ContactKindSet];
-  });
-
-  if (!isExistsContactKind) {
-    return ContactKindValidateError.kindEmpty;
+    return ContactContentsValidateError.noError;
   }
-
-  return ContactKindValidateError.noError;
-}
-
-export function getContactContentsValidateErrorCode(
-  contents: string,
-  files: File[]
-) {
-  if (contents === '' && files.length === 0) {
-    return ContactContentsValidateError.contentsEmpty;
-  }
-
-  return ContactContentsValidateError.noError;
 }
 
 function checkEmailPattern(email: string) {

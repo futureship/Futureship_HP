@@ -49,6 +49,16 @@ export const useContactValidateStatusViewModel = () => {
     status: ContactContentsValidateError
   ) => setContentsValidatorStatus(status);
 
+  const isExistsValidatorError = () => {
+    return (
+      nameValidatorStatus !== ContactContentsValidateError.noError ||
+      emailValidatorStatus !== ContactEmailValidateError.noError ||
+      phoneValidatorStatus !== ContactPhoneValidateError.noError ||
+      kindValidatorStatus !== ContactKindValidateError.noError ||
+      contentsValidatorStatus !== ContactContentsValidateError.noError
+    );
+  };
+
   return {
     nameValidatorStatus,
     updateNameValidatorStatus,
@@ -60,5 +70,6 @@ export const useContactValidateStatusViewModel = () => {
     updateKindValidatorStatus,
     contentsValidatorStatus,
     updateContentsValidatorStatus,
+    isExistsValidatorError,
   };
 };
