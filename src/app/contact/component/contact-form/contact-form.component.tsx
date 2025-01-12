@@ -165,6 +165,9 @@ export const ContactForm: React.FC = () => {
         <textarea
           className={styles.textarea}
           placeholder={t('contact.form.placeholder.contents.textarea')}
+          onChange={(event: React.ChangeEvent<HTMLTextAreaElement>) =>
+            updateContents(event.target.value)
+          }
         />
       </div>
       <div className={styles.security}>
