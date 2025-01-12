@@ -7,6 +7,7 @@ import { useTranslation } from 'react-i18next';
 import { useDropzone } from 'react-dropzone';
 import { useContactValidateStatusViewModel } from '@/app/contact/validator/contact-validate-status.store';
 import { ContentsValidator } from '@/app/contact/validator/contact.validator';
+import { ContactKindSet } from '@/app/contact/store/contact.const';
 
 export const ContactForm: React.FC = () => {
   const { t } = useTranslation('common');
@@ -61,6 +62,44 @@ export const ContactForm: React.FC = () => {
     </div>
   ));
 
+  const onChangeName = (event: React.ChangeEvent<HTMLInputElement>) => {
+    updateName(event.target.value);
+    updateNameValidatorStatus(
+      ContentsValidator.getContactNameValidateErrorCode(event.target.value)
+    );
+  };
+
+  const onChangeEmail = (event: React.ChangeEvent<HTMLInputElement>) => {
+    updateEmail(event.target.value);
+    updateEmailValidatorStatus(
+      ContentsValidator.getContactEmailValidateErrorCode(event.target.value)
+    );
+  };
+
+  const onChangePhone = (event: React.ChangeEvent<HTMLInputElement>) => {
+    updatePhone(event.target.value);
+    updatePhoneValidatorStatus(
+      ContentsValidator.getContactPhoneValidateErrorCode(event.target.value)
+    );
+  };
+
+  function onChangeKind(kind: ContactKindSet) {
+    updateKind(kind);
+    updateKindValidatorStatus(
+      ContentsValidator.getContactKindValidateErrorCode(kind)
+    );
+  }
+
+  const onChangeContents = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    updateContents(event.target.value);
+    updateContentsValidatorStatus(
+      ContentsValidator.getContactContentsValidateErrorCode(
+        event.target.value,
+        files
+      )
+    );
+  };
+
   const onClickConfirm = () => {
     setValidatorStatus();
     if (!isExistsValidatorError()) {
@@ -95,9 +134,7 @@ export const ContactForm: React.FC = () => {
         </span>
         <input
           className={styles.input}
-          onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-            updateName(event.target.value)
-          }
+          onChange={onChangeName}
           placeholder={t('contact.form.placeholder.name')}
         />
       </div>
@@ -107,9 +144,7 @@ export const ContactForm: React.FC = () => {
         </span>
         <input
           className={styles.input}
-          onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-            updateEmail(event.target.value)
-          }
+          onChange={onChangeEmail}
           placeholder={t('contact.form.placeholder.email')}
         />
       </div>
@@ -119,9 +154,7 @@ export const ContactForm: React.FC = () => {
         </span>
         <input
           className={styles.input}
-          onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-            updatePhone(event.target.value)
-          }
+          onChange={onChangePhone}
           placeholder={t('contact.form.placeholder.phone')}
         />
       </div>
@@ -156,39 +189,39 @@ export const ContactForm: React.FC = () => {
         </h3>
         <input
           type="checkbox"
-          onClick={() => updateKind({ ...kind, homepage: !kind.homepage })}
+          onClick={() => onChangeKind({ ...kind, homepage: !kind.homepage })}
           checked={kind.homepage}
         />
         <span>{t('contact.form.kindSelect.homepage')}</span>
         <input
           type="checkbox"
-          onClick={() => updateKind({ ...kind, service: !kind.service })}
+          onClick={() => onChangeKind({ ...kind, service: !kind.service })}
           checked={kind.service}
         />
         <span>{t('contact.form.kindSelect.service')}</span>
         <input
           type="checkbox"
-          onClick={() => updateKind({ ...kind, article: !kind.article })}
+          onClick={() => onChangeKind({ ...kind, article: !kind.article })}
           checked={kind.article}
         />
         <span>{t('contact.form.kindSelect.article')}</span>
         <br />
         <input
           type="checkbox"
-          onClick={() => updateKind({ ...kind, media: !kind.media })}
+          onClick={() => onChangeKind({ ...kind, media: !kind.media })}
           checked={kind.media}
         />
         <span>{t('contact.form.kindSelect.media')}</span>
         <br />
         <input
           type="checkbox"
-          onClick={() => updateKind({ ...kind, staff: !kind.staff })}
+          onClick={() => onChangeKind({ ...kind, staff: !kind.staff })}
           checked={kind.staff}
         />
         <span>{t('contact.form.kindSelect.staff')}</span>
         <input
           type="checkbox"
-          onClick={() => updateKind({ ...kind, other: !kind.other })}
+          onClick={() => onChangeKind({ ...kind, other: !kind.other })}
           checked={kind.other}
         />
         <span>{t('contact.form.kindSelect.other')}</span>
@@ -210,9 +243,7 @@ export const ContactForm: React.FC = () => {
         <textarea
           className={styles.textarea}
           placeholder={t('contact.form.placeholder.contents.textarea')}
-          onChange={(event: React.ChangeEvent<HTMLTextAreaElement>) =>
-            updateContents(event.target.value)
-          }
+          onChange={onChangeContents}
         />
       </div>
       <div className={styles.security}>
@@ -222,7 +253,7 @@ export const ContactForm: React.FC = () => {
         </a>
         <span>{t('contact.form.confirmSecurity.message')}</span>
       </div>
-      <button className={styles.confirm} onClick={() => onClickConfirm()}>
+      <button className={styles.confirm} onClick={onClickConfirm}>
         {t('contact.form.confirm')}
       </button>
     </div>
