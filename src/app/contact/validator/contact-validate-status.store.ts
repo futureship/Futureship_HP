@@ -15,7 +15,6 @@ import {
   ContactNameValidateError,
   ContactPhoneValidateError,
 } from '@/app/contact/validator/contact.validator';
-// import cloneDeep from 'lodash/cloneDeep';
 
 export const useContactValidateStatusViewModel = () => {
   const [nameValidatorStatus, setNameValidatorStatus] = useAtom(
