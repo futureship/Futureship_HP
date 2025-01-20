@@ -26,7 +26,7 @@
 .form {
   display: grid;
   grid-template-columns: 4fr 7fr;
-  padding-bottom: 16px;
+  padding-top: 16px;
 }
 
 .inputTitle {
@@ -50,7 +50,7 @@
 }
 
 .kind {
-  padding-bottom: 16px;
+  padding: 20px 0 16px 0;
 }
 
 .contents {
@@ -128,4 +128,14 @@
   height: 48px;
   margin-bottom: 16px;
   border-radius: 7px;
+}
+
+.errorArea {
+  display: grid;
+  grid-template-columns: 4fr 7fr;
+}
+
+.error {
+  color: $error;
+  font-size: 10px;
 }
