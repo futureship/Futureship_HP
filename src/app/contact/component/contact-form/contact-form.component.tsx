@@ -6,7 +6,14 @@ import '@i18n';
 import { useTranslation } from 'react-i18next';
 import { useDropzone } from 'react-dropzone';
 import { useContactValidateStatusViewModel } from '@/app/contact/validator/contact-validate-status.store';
-import { ContentsValidator } from '@/app/contact/validator/contact.validator';
+import {
+  ContactContentsValidateError,
+  ContactEmailValidateError,
+  ContactKindValidateError,
+  ContactNameValidateError,
+  ContactPhoneValidateError,
+  ContentsValidator,
+} from '@/app/contact/validator/contact.validator';
 import { ContactKindSet } from '@/app/contact/store/contact.const';
 
 export const ContactForm: React.FC = () => {
@@ -138,6 +145,14 @@ export const ContactForm: React.FC = () => {
           placeholder={t('contact.form.placeholder.name')}
         />
       </div>
+      {nameValidatorStatus === ContactNameValidateError.nameEmpty && (
+        <div className={styles.errorArea}>
+          <span></span>
+          <span className={styles.error}>
+            {t('contact.validator.nameEmpty')}
+          </span>
+        </div>
+      )}
       <div className={styles.form}>
         <span className={`${styles.inputTitle} ${styles.must}`}>
           {t('contact.form.column.email')}
@@ -148,6 +163,23 @@ export const ContactForm: React.FC = () => {
           placeholder={t('contact.form.placeholder.email')}
         />
       </div>
+      {emailValidatorStatus === ContactEmailValidateError.emailEmpty && (
+        <div className={styles.errorArea}>
+          <span></span>
+          <span className={styles.error}>
+            {t('contact.validator.emailEmpty')}
+          </span>
+        </div>
+      )}
+      {emailValidatorStatus === ContactEmailValidateError.emailInvalid && (
+        <div className={styles.errorArea}>
+          <span></span>
+          <span className={styles.error}>
+            {t('contact.validator.emailInvalid')}
+          </span>
+        </div>
+      )}
+
       <div className={styles.form}>
         <span className={`${styles.inputTitle} ${styles.must}`}>
           {t('contact.form.column.phone')}
@@ -158,6 +190,23 @@ export const ContactForm: React.FC = () => {
           placeholder={t('contact.form.placeholder.phone')}
         />
       </div>
+      {phoneValidatorStatus === ContactPhoneValidateError.phoneEmpty && (
+        <div className={styles.errorArea}>
+          <span></span>
+          <span className={styles.error}>
+            {t('contact.validator.phoneEmpty')}
+          </span>
+        </div>
+      )}
+      {phoneValidatorStatus === ContactPhoneValidateError.phoneInvalid && (
+        <div className={styles.errorArea}>
+          <span></span>
+          <span className={styles.error}>
+            {t('contact.validator.phoneInvalid')}
+          </span>
+        </div>
+      )}
+
       <div className={styles.form}>
         <span className={styles.inputTitle}>
           {t('contact.form.column.place')}
@@ -182,11 +231,18 @@ export const ContactForm: React.FC = () => {
           placeholder={t('contact.form.placeholder.position')}
         />
       </div>
+
+      {/* お問い合わせ種別 */}
       <div className={styles.kind}>
         <h3 className={styles.kindTitle}>
           <span className={styles.must}>{t('contact.form.column.kind')}</span>
           <span>{t('contact.form.column.multiSelectable')}</span>
         </h3>
+        {kindValidatorStatus === ContactKindValidateError.kindEmpty && (
+          <span className={styles.error}>
+            {t('contact.validator.kindEmpty')}
+          </span>
+        )}
         <input
           type="checkbox"
           onClick={() => onChangeKind({ ...kind, homepage: !kind.homepage })}
@@ -226,12 +282,19 @@ export const ContactForm: React.FC = () => {
         />
         <span>{t('contact.form.kindSelect.other')}</span>
       </div>
+
       <div className={styles.contents}>
         <h3 className={styles.kindTitle}>
           <span className={styles.must}>
             {t('contact.form.column.contents.title')}
           </span>
         </h3>
+        {contentsValidatorStatus ===
+          ContactContentsValidateError.contentsEmpty && (
+          <span className={styles.error}>
+            {t('contact.validator.contentsEmpty')}
+          </span>
+        )}
         <div className={styles.description}>
           {t('contact.form.column.contents.description')}
         </div>
@@ -253,7 +316,7 @@ export const ContactForm: React.FC = () => {
         </a>
         <span>{t('contact.form.confirmSecurity.message')}</span>
       </div>
-      <button className={styles.confirm} onClick={onClickConfirm}>
+      <button className={styles.confirm} onClick={() => onClickConfirm()}>
         {t('contact.form.confirm')}
       </button>
     </div>
