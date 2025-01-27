@@ -14,7 +14,9 @@ import {
   ContactKindValidateError,
   ContactNameValidateError,
   ContactPhoneValidateError,
+  ContactsValidator,
 } from '@/app/contact/validator/contact.validator';
+import { ContactKindSet } from '@/app/contact/store/contact.const';
 
 export const useContactValidateStatusViewModel = () => {
   const [nameValidatorStatus, setNameValidatorStatus] = useAtom(
@@ -33,29 +35,60 @@ export const useContactValidateStatusViewModel = () => {
     contentsValidatorStatusAtom
   );
 
-  const updateNameValidatorStatus = (status: ContactNameValidateError) =>
-    setNameValidatorStatus(status);
+  const updateNameValidatorStatus = async (name: string) => {
+    const errorStatus = ContactsValidator.getContactNameValidateErrorCode(name);
+    console.log(errorStatus);
+    setNameValidatorStatus(errorStatus);
+    await new Promise<void>((resolve) => {
+      resolve();
+    });
+  };
 
-  const updateEmailValidatorStatus = (status: ContactEmailValidateError) =>
-    setEmailValidatorStatus(status);
+  const updateEmailValidatorStatus = (email: string) => {
+    const errorStatus =
+      ContactsValidator.getContactEmailValidateErrorCode(email);
+    setEmailValidatorStatus(errorStatus);
+  };
 
-  const updatePhoneValidatorStatus = (status: ContactPhoneValidateError) =>
-    setPhoneValidatorStatus(status);
+  const updatePhoneValidatorStatus = (phone: string) => {
+    const errorStatus =
+      ContactsValidator.getContactPhoneValidateErrorCode(phone);
+    setPhoneValidatorStatus(errorStatus);
+  };
 
-  const updateKindValidatorStatus = (status: ContactKindValidateError) =>
-    setKindValidatorStatus(status);
+  const updateKindValidatorStatus = (kind: ContactKindSet) => {
+    const errorStatus = ContactsValidator.getContactKindValidateErrorCode(kind);
+    setKindValidatorStatus(errorStatus);
+  };
 
-  const updateContentsValidatorStatus = (
-    status: ContactContentsValidateError
-  ) => setContentsValidatorStatus(status);
+  const updateContentsValidatorStatus = (contents: string, files: File[]) => {
+    const errorStatus = ContactsValidator.getContactContentsValidateErrorCode(
+      contents,
+      files
+    );
+    setContentsValidatorStatus(errorStatus);
+  };
 
-  const isExistsValidatorError = () => {
+  // HACK ogawa: 引数が必要ないはず。方法思いつけばなんとかしたい。
+  const isExistsValidatorError = (
+    name: string,
+    email: string,
+    phone: string,
+    kind: ContactKindSet,
+    contents: string,
+    files: File[]
+  ) => {
     return (
-      nameValidatorStatus !== ContactContentsValidateError.noError ||
-      emailValidatorStatus !== ContactEmailValidateError.noError ||
-      phoneValidatorStatus !== ContactPhoneValidateError.noError ||
-      kindValidatorStatus !== ContactKindValidateError.noError ||
-      contentsValidatorStatus !== ContactContentsValidateError.noError
+      ContactsValidator.getContactNameValidateErrorCode(name) !==
+        ContactNameValidateError.noError ||
+      ContactsValidator.getContactEmailValidateErrorCode(email) !==
+        ContactEmailValidateError.noError ||
+      ContactsValidator.getContactPhoneValidateErrorCode(phone) !==
+        ContactPhoneValidateError.noError ||
+      ContactsValidator.getContactKindValidateErrorCode(kind) !==
+        ContactKindValidateError.noError ||
+      ContactsValidator.getContactContentsValidateErrorCode(contents, files) !==
+        ContactContentsValidateError.noError
     );
   };
 
