@@ -225,18 +225,21 @@ export const ContactForm: React.FC = () => {
         </h3>
 
         <input
+          className={styles.checkbox}
           type="checkbox"
           onClick={() => onChangeKind({ ...kind, homepage: !kind.homepage })}
           checked={kind.homepage}
         />
         <span>{t('contact.form.kindSelect.homepage')}</span>
         <input
+          className={styles.checkbox}
           type="checkbox"
           onClick={() => onChangeKind({ ...kind, service: !kind.service })}
           checked={kind.service}
         />
         <span>{t('contact.form.kindSelect.service')}</span>
         <input
+          className={styles.checkbox}
           type="checkbox"
           onClick={() => onChangeKind({ ...kind, article: !kind.article })}
           checked={kind.article}
@@ -244,6 +247,7 @@ export const ContactForm: React.FC = () => {
         <span>{t('contact.form.kindSelect.article')}</span>
         <br />
         <input
+          className={styles.checkbox}
           type="checkbox"
           onClick={() => onChangeKind({ ...kind, media: !kind.media })}
           checked={kind.media}
@@ -251,12 +255,14 @@ export const ContactForm: React.FC = () => {
         <span>{t('contact.form.kindSelect.media')}</span>
         <br />
         <input
+          className={styles.checkbox}
           type="checkbox"
           onClick={() => onChangeKind({ ...kind, staff: !kind.staff })}
           checked={kind.staff}
         />
         <span>{t('contact.form.kindSelect.staff')}</span>
         <input
+          className={styles.checkbox}
           type="checkbox"
           onClick={() => onChangeKind({ ...kind, other: !kind.other })}
           checked={kind.other}
@@ -293,6 +299,7 @@ export const ContactForm: React.FC = () => {
       </div>
       <div className={styles.security}>
         <input
+          className={styles.checkbox}
           type="checkbox"
           onClick={() =>
             updateIsConfirmedSecurityPolicy(!isConfirmedSecurityPolicy)
