@@ -12,7 +12,6 @@ import {
   ContactKindValidateError,
   ContactNameValidateError,
   ContactPhoneValidateError,
-  ContentsValidator,
 } from '@/app/contact/validator/contact.validator';
 import { ContactKindSet } from '@/app/contact/store/contact.const';
 
@@ -54,6 +53,7 @@ export const ContactForm: React.FC = () => {
 
   const onDrop = (acceptedFiles: File[]) => {
     addFiles(acceptedFiles);
+    // TODO ogawa: ファイルサイズバリデーションロジックを移動、エラーコードの作成
     const totalSize = acceptedFiles.reduce((acc, file) => acc + file.size, 0);
     console.log('受け取ったファイルサイズ', totalSize);
   };
@@ -71,65 +71,43 @@ export const ContactForm: React.FC = () => {
 
   const onChangeName = (event: React.ChangeEvent<HTMLInputElement>) => {
     updateName(event.target.value);
-    updateNameValidatorStatus(
-      ContentsValidator.getContactNameValidateErrorCode(event.target.value)
-    );
+    updateNameValidatorStatus(event.target.value);
   };
 
   const onChangeEmail = (event: React.ChangeEvent<HTMLInputElement>) => {
     updateEmail(event.target.value);
-    updateEmailValidatorStatus(
-      ContentsValidator.getContactEmailValidateErrorCode(event.target.value)
-    );
+    updateEmailValidatorStatus(event.target.value);
   };
 
   const onChangePhone = (event: React.ChangeEvent<HTMLInputElement>) => {
     updatePhone(event.target.value);
-    updatePhoneValidatorStatus(
-      ContentsValidator.getContactPhoneValidateErrorCode(event.target.value)
-    );
+    updatePhoneValidatorStatus(event.target.value);
   };
 
   function onChangeKind(kind: ContactKindSet) {
     updateKind(kind);
-    updateKindValidatorStatus(
-      ContentsValidator.getContactKindValidateErrorCode(kind)
-    );
+    updateKindValidatorStatus(kind);
   }
 
   const onChangeContents = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     updateContents(event.target.value);
-    updateContentsValidatorStatus(
-      ContentsValidator.getContactContentsValidateErrorCode(
-        event.target.value,
-        files
-      )
-    );
+    updateContentsValidatorStatus(event.target.value, files);
   };
 
-  const onClickConfirm = () => {
+  const onClickConfirm = async () => {
     setValidatorStatus();
-    if (!isExistsValidatorError()) {
+
+    if (!isExistsValidatorError(name, email, phone, kind, contents, files)) {
       updateIsEdit(false);
     }
   };
 
   function setValidatorStatus() {
-    updateNameValidatorStatus(
-      ContentsValidator.getContactNameValidateErrorCode(name)
-    );
-    updateEmailValidatorStatus(
-      ContentsValidator.getContactEmailValidateErrorCode(email)
-    );
-    updatePhoneValidatorStatus(
-      ContentsValidator.getContactPhoneValidateErrorCode(phone)
-    );
-    updateKindValidatorStatus(
-      ContentsValidator.getContactKindValidateErrorCode(kind)
-    );
-    updateContentsValidatorStatus(
-      ContentsValidator.getContactContentsValidateErrorCode(contents, files)
-    );
+    updateNameValidatorStatus(name);
+    updateEmailValidatorStatus(email);
+    updatePhoneValidatorStatus(phone);
+    updateKindValidatorStatus(kind);
+    updateContentsValidatorStatus(contents, files);
   }
 
   return (
