@@ -41,16 +41,16 @@ export const ContactContentsValidateError = {
 export type ContactContentsValidateError =
   (typeof ContactContentsValidateError)[keyof typeof ContactContentsValidateError];
 
-export namespace ContentsValidator {
+export namespace ContactsValidator {
   export function getContactNameValidateErrorCode(name: string) {
-    if (name === '-') {
+    if (name === '') {
       return ContactNameValidateError.nameEmpty;
     }
     return ContactNameValidateError.noError;
   }
 
   export function getContactEmailValidateErrorCode(email: string) {
-    if (email === '-') {
+    if (email === '') {
       return ContactEmailValidateError.emailEmpty;
     }
 
