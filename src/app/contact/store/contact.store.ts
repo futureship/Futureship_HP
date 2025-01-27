@@ -3,6 +3,7 @@ import {
   contentsAtom,
   emailAtom,
   filesAtom,
+  isConfirmedSecurityPolicyAtom,
   isEditAtom,
   kindAtom,
   nameAtom,
@@ -23,6 +24,9 @@ export const useContactViewModel = () => {
   const [kind, setKind] = useAtom(kindAtom);
   const [contents, setContents] = useAtom(contentsAtom);
   const [files, setFiles] = useAtom(filesAtom);
+  const [isConfirmedSecurityPolicy, setIsConfirmedSecurityPolicy] = useAtom(
+    isConfirmedSecurityPolicyAtom
+  );
   const [isEdit, setIsEdit] = useAtom(isEditAtom);
 
   // const increment = () => setCount((prev) => prev + 1);
@@ -45,6 +49,8 @@ export const useContactViewModel = () => {
     fileList.splice(index, 1);
     setFiles(fileList);
   };
+  const updateIsConfirmedSecurityPolicy = (status: boolean) =>
+    setIsConfirmedSecurityPolicy(status);
   const updateIsEdit = (newIsEdit: boolean) => setIsEdit(newIsEdit);
 
   return {
@@ -65,6 +71,8 @@ export const useContactViewModel = () => {
     files,
     addFiles,
     deleteFile,
+    isConfirmedSecurityPolicy,
+    updateIsConfirmedSecurityPolicy,
     isEdit,
     updateIsEdit,
   };

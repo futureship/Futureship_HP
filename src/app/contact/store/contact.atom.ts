@@ -11,3 +11,5 @@ export const positionAtom = atom('-');
 export const kindAtom = atom(initialContactKindSet());
 export const filesAtom = atom([] as File[]);
 export const contentsAtom = atom('');
+
+export const isConfirmedSecurityPolicyAtom = atom(false);

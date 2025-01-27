@@ -34,6 +34,8 @@ export const ContactForm: React.FC = () => {
     files,
     addFiles,
     deleteFile,
+    isConfirmedSecurityPolicy,
+    updateIsConfirmedSecurityPolicy,
   } = useContactViewModel();
 
   const {
@@ -215,12 +217,13 @@ export const ContactForm: React.FC = () => {
         <h3 className={styles.kindTitle}>
           <span className={styles.must}>{t('contact.form.column.kind')}</span>
           <span>{t('contact.form.column.multiSelectable')}</span>
+          {kindValidatorStatus === ContactKindValidateError.kindEmpty && (
+            <span className={styles.error}>
+              {t('contact.validator.kindEmpty')}
+            </span>
+          )}
         </h3>
-        {kindValidatorStatus === ContactKindValidateError.kindEmpty && (
-          <span className={styles.error}>
-            {t('contact.validator.kindEmpty')}
-          </span>
-        )}
+
         <input
           type="checkbox"
           onClick={() => onChangeKind({ ...kind, homepage: !kind.homepage })}
@@ -266,13 +269,14 @@ export const ContactForm: React.FC = () => {
           <span className={styles.must}>
             {t('contact.form.column.contents.title')}
           </span>
+          {contentsValidatorStatus ===
+            ContactContentsValidateError.contentsEmpty && (
+            <span className={styles.error}>
+              {t('contact.validator.contentsEmpty')}
+            </span>
+          )}
         </h3>
-        {contentsValidatorStatus ===
-          ContactContentsValidateError.contentsEmpty && (
-          <span className={styles.error}>
-            {t('contact.validator.contentsEmpty')}
-          </span>
-        )}
+
         <div className={styles.description}>
           {t('contact.form.column.contents.description')}
         </div>
@@ -288,12 +292,27 @@ export const ContactForm: React.FC = () => {
         />
       </div>
       <div className={styles.security}>
-        <input type="checkbox" />
+        <input
+          type="checkbox"
+          onClick={() =>
+            updateIsConfirmedSecurityPolicy(!isConfirmedSecurityPolicy)
+          }
+          checked={isConfirmedSecurityPolicy}
+        />
         <a className={styles.securityLink}>
           {t('contact.form.confirmSecurity.link')}
         </a>
         <span>{t('contact.form.confirmSecurity.message')}</span>
+        {!isConfirmedSecurityPolicy && (
+          <div>
+            <span></span>
+            <span className={styles.error}>
+              {t('contact.validator.notConfirmedSecurityPolicy')}
+            </span>
+          </div>
+        )}
       </div>
+
       <button className={styles.confirm} onClick={() => onClickConfirm()}>
         {t('contact.form.confirm')}
       </button>

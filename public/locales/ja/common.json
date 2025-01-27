@@ -168,7 +168,8 @@
       "phoneInvalid": "電話番号の形式が不正です。",
       "kindEmpty": "お問い合わせ種別を一つ以上選択してください。",
       "contentsEmpty": "お問い合わせ内容を入力してください。",
-      "fileSizeOver": "ファイルサイズは10MBまでです。"
+      "fileSizeOver": "ファイルサイズは10MBまでです。",
+      "notConfirmedSecurityPolicy": "セキュリティポリシーに同意してください。"
     }
   },
   "message": {
