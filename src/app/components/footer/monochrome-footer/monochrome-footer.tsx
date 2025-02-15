@@ -3,7 +3,7 @@
 import React from 'react';
 import '@i18n';
 import { useTranslation } from 'react-i18next';
-import styles from './footer.module.scss';
+import styles from './monochrome-footer.module.scss';
 import { useRouter } from 'next/navigation';
 
 const MonochromeFooter: React.FC = () => {
