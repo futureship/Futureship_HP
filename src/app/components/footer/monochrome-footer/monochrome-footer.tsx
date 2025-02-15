@@ -3,10 +3,10 @@
 import React from 'react';
 import '@i18n';
 import { useTranslation } from 'react-i18next';
-import styles from './footer.module.scss';
+import styles from './monochrome-footer.module.scss';
 import { useRouter } from 'next/navigation';
 
-const Footer: React.FC = () => {
+const MonochromeFooter: React.FC = () => {
   const { t } = useTranslation('common');
   const router = useRouter();
 
@@ -14,8 +14,8 @@ const Footer: React.FC = () => {
     router.push('/mission');
   };
 
-  const onClickProfile = () => {
-    router.push('/profile');
+  const onClickAbout = () => {
+    router.push('/about');
   };
 
   const onClickPolicy = () => {
@@ -38,6 +38,10 @@ const Footer: React.FC = () => {
     router.push('/contact');
   };
 
+  const onClickSecurityPolicy = () => {
+    router.push('/security');
+  };
+
   return (
     <div className={styles.footer}>
       <div className={styles.curve}></div>
@@ -52,7 +56,7 @@ const Footer: React.FC = () => {
             {t('footer.menu.base.forAboutMe')}
           </div>
           <div>
-            <span className={styles.cursorPointer} onClick={onClickProfile}>
+            <span className={styles.cursorPointer} onClick={onClickAbout}>
               {t('footer.menu.base.profile')}
             </span>
           </div>
@@ -74,15 +78,17 @@ const Footer: React.FC = () => {
               {t('footer.menu.service.service')}
             </span>
           </div>
-          <div>{t('footer.menu.service.service1')}</div>
-          <div>{t('footer.menu.service.service2')}</div>
+          {/* TODO: 実装されてから復活 */}
+          {/* <div>{t('footer.menu.service.service1')}</div>
+          <div>{t('footer.menu.service.service2')}</div> */}
         </div>
 
-        <div className={styles.menuCategory}>
+        {/* TODO: 実装されてから復活 */}
+        {/* <div className={styles.menuCategory}>
           <div className={styles.menuCategoryTitle}>
             {t('footer.menu.donation.donation')}
           </div>
-        </div>
+        </div> */}
 
         <div className={styles.menuCategory}>
           <div className={styles.menuCategoryTitle}>
@@ -102,6 +108,17 @@ const Footer: React.FC = () => {
             </span>
           </div>
         </div>
+
+        <div className={styles.menuCategory}>
+          <div className={styles.menuCategoryTitle}>
+            <span
+              className={styles.cursorPointer}
+              onClick={onClickSecurityPolicy}
+            >
+              {t('footer.menu.securityPolicy.securityPolicy')}
+            </span>
+          </div>
+        </div>
       </div>
       <div className={styles.contactArea}>
         <button className={styles.contact} onClick={onClickContact}>
@@ -115,4 +132,4 @@ const Footer: React.FC = () => {
   );
 };
 
-export default Footer;
+export default MonochromeFooter;

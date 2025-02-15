@@ -86,6 +86,9 @@
       },
       "privacyPolicy": {
         "privacyPolicy": "プライバシーポリシー"
+      },
+      "securityPolicy": {
+        "securityPolicy": "セキュリティポリシー"
       }
     },
     "contact": "contact",
