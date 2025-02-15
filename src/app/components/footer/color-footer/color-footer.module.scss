@@ -16,6 +16,16 @@
   margin-bottom: 20px;
 }
 
+.curveWhite2 {
+  height: 60px;
+  width: 100%; /* 幅を指定 */
+  background-color: $white2; /* 背景色を指定 */
+  border-bottom-left-radius: 50%; /* 左上の角を丸く */
+  border-bottom-right-radius: 50%; /* 右上の角を丸く */
+  position: relative; /* 相対位置を指定 */
+  margin-bottom: 20px;
+}
+
 .menu {
   @include fontOnest;
 

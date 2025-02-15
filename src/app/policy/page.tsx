@@ -53,7 +53,7 @@ const Policy: React.FC = () => {
         </div>
       </div>
       <footer>
-        <ColorFooter></ColorFooter>
+        <ColorFooter backGround="white2"></ColorFooter>
       </footer>
     </div>
   );
