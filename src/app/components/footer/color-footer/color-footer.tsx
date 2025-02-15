@@ -3,10 +3,10 @@
 import React from 'react';
 import '@i18n';
 import { useTranslation } from 'react-i18next';
-import styles from './footer.module.scss';
+import styles from './color-footer.module.scss';
 import { useRouter } from 'next/navigation';
 
-const Footer: React.FC = () => {
+const ColorFooter: React.FC = () => {
   const { t } = useTranslation('common');
   const router = useRouter();
 
@@ -132,4 +132,4 @@ const Footer: React.FC = () => {
   );
 };
 
-export default Footer;
+export default ColorFooter;
