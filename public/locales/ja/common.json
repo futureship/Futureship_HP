@@ -158,6 +158,18 @@
         "edit": "編集する",
         "confirm": "この内容で、お問い合わせを送信する"
       }
+    },
+    "validator": {
+      "nameEmpty": "名前を入力してください。",
+      "nameInvalid": "姓斗名前の間にスペースを入れてください。",
+      "emailEmpty": "メールを入力してください。",
+      "emailInvalid": "メール形式が不正です。",
+      "phoneEmpty": "電話番号を入力してください。",
+      "phoneInvalid": "電話番号の形式が不正です。",
+      "kindEmpty": "お問い合わせ種別を一つ以上選択してください。",
+      "contentsEmpty": "お問い合わせ内容を入力してください。",
+      "fileSizeOver": "ファイルサイズは10MBまでです。",
+      "notConfirmedSecurityPolicy": "セキュリティポリシーに同意してください。"
     }
   },
   "message": {

@@ -3,11 +3,13 @@ import { atom } from 'jotai';
 
 export const isEditAtom = atom(true);
 
-export const nameAtom = atom('-');
-export const emailAtom = atom('xxxxxxx@xxxx.com');
-export const phoneAtom = atom('080-1234-4567');
-export const placeAtom = atom('ー');
+export const nameAtom = atom('');
+export const emailAtom = atom('');
+export const phoneAtom = atom('');
+export const placeAtom = atom('-');
 export const positionAtom = atom('-');
 export const kindAtom = atom(initialContactKindSet());
 export const filesAtom = atom([] as File[]);
-export const contentsAtom = atom('-');
+export const contentsAtom = atom('');
+
+export const isConfirmedSecurityPolicyAtom = atom(false);
