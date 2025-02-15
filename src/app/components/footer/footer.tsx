@@ -14,8 +14,8 @@ const Footer: React.FC = () => {
     router.push('/mission');
   };
 
-  const onClickProfile = () => {
-    router.push('/profile');
+  const onClickAbout = () => {
+    router.push('/about');
   };
 
   const onClickPolicy = () => {
@@ -56,7 +56,7 @@ const Footer: React.FC = () => {
             {t('footer.menu.base.forAboutMe')}
           </div>
           <div>
-            <span className={styles.cursorPointer} onClick={onClickProfile}>
+            <span className={styles.cursorPointer} onClick={onClickAbout}>
               {t('footer.menu.base.profile')}
             </span>
           </div>
