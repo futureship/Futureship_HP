@@ -13,7 +13,7 @@ const Security = () => {
       try {
         const response = await fetch('/doc/securityPolicy.json');
         const result = await response.json();
-        setData(result.privacy as string);
+        setData(result.security as string);
       } catch (error) {
         console.error('Error fetching the file:', error);
       }
@@ -24,12 +24,12 @@ const Security = () => {
 
   return (
     <div className={styles.area}>
-      <div className={styles.title}>プライバシーポリシー</div>
+      <div className={styles.title}>セキュリティーポリシー</div>
       <div className={styles.doc}>
         {data ? (
           <pre>
             {data.split('\n').map((line, index) => (
-              <div key={index} className={styles.privacy}>
+              <div key={index} className={styles.security}>
                 {line}
               </div>
             ))}
