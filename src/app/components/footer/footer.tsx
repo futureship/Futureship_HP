@@ -38,6 +38,10 @@ const Footer: React.FC = () => {
     router.push('/contact');
   };
 
+  const onClickSecurityPolicy = () => {
+    router.push('/security');
+  };
+
   return (
     <div className={styles.footer}>
       <div className={styles.curve}></div>
@@ -74,15 +78,17 @@ const Footer: React.FC = () => {
               {t('footer.menu.service.service')}
             </span>
           </div>
-          <div>{t('footer.menu.service.service1')}</div>
-          <div>{t('footer.menu.service.service2')}</div>
+          {/* TODO: 実装されてから復活 */}
+          {/* <div>{t('footer.menu.service.service1')}</div>
+          <div>{t('footer.menu.service.service2')}</div> */}
         </div>
 
-        <div className={styles.menuCategory}>
+        {/* TODO: 実装されてから復活 */}
+        {/* <div className={styles.menuCategory}>
           <div className={styles.menuCategoryTitle}>
             {t('footer.menu.donation.donation')}
           </div>
-        </div>
+        </div> */}
 
         <div className={styles.menuCategory}>
           <div className={styles.menuCategoryTitle}>
@@ -99,6 +105,17 @@ const Footer: React.FC = () => {
               onClick={onClickPrivacyPolicy}
             >
               {t('footer.menu.privacyPolicy.privacyPolicy')}
+            </span>
+          </div>
+        </div>
+
+        <div className={styles.menuCategory}>
+          <div className={styles.menuCategoryTitle}>
+            <span
+              className={styles.cursorPointer}
+              onClick={onClickSecurityPolicy}
+            >
+              {t('footer.menu.securityPolicy.securityPolicy')}
             </span>
           </div>
         </div>
