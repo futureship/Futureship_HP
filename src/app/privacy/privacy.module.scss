@@ -1,3 +1,32 @@
+@import '@style/common.module';
+@import '@style/_color.const';
+
+.area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: $white2;
+}
+
+.doc {
+  width: 80%;
+  padding-bottom: 40px;
+}
+
 .privacy {
-  height: 900px;
+  font-size: 16px;
+  overflow: auto;
+  word-wrap: break-word;
+  white-space: normal;
+  // height: 25px;
+  min-height: 20px;
+  line-height: 160%;
+}
+
+.title {
+  width: 80%;
+  font-size: 32px;
+  font-weight: bold;
+  padding: 80px 0 40px 0;
 }

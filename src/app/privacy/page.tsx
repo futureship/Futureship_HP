@@ -1,6 +1,7 @@
 // 'use-strict';
 'use client';
 
+import MonochromeFooter from '@/app/components/footer/monochrome-footer/monochrome-footer';
 import styles from './privacy.module.scss';
 import React, { useEffect, useState } from 'react';
 
@@ -22,19 +23,24 @@ const Privacy = () => {
   }, []);
 
   return (
-    <div className={styles.privacy}>
-      <div>プライバシーポリシー</div>
-      <div>
+    <div className={styles.area}>
+      <div className={styles.title}>プライバシーポリシー</div>
+      <div className={styles.doc}>
         {data ? (
           <pre>
             {data.split('\n').map((line, index) => (
-              <div key={index}>{line}</div>
+              <div key={index} className={styles.privacy}>
+                {line}
+              </div>
             ))}
           </pre>
         ) : (
           <p>Loading...</p>
         )}
       </div>
+      <footer>
+        <MonochromeFooter></MonochromeFooter>
+      </footer>
     </div>
   );
 };
