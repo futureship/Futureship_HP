@@ -1,5 +1,6 @@
 'use client';
 
+import ColorFooter from '@/app/components/footer/color-footer/color-footer';
 import styles from './about.module.scss';
 import '@i18n';
 import { useTranslation } from 'react-i18next';
@@ -66,6 +67,10 @@ const About: React.FC = () => {
         </thead>
         <tbody>{history}</tbody>
       </table>
+
+      <footer className={styles.footer}>
+        <ColorFooter></ColorFooter>
+      </footer>
     </div>
   );
 };
