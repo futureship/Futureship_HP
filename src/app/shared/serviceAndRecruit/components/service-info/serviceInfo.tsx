@@ -20,8 +20,8 @@ const ServiceInfo: React.FC<ServiceInfoChild> = (props) => {
           </div>
         );
       })}
-
-      <button className={styles.button}>{props.button}</button>
+      {/* TODO：ページ作成後復活　 */}
+      {/* <button className={styles.button}>{props.button}</button> */}
     </div>
   );
 };

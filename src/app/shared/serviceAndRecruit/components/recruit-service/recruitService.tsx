@@ -1,4 +1,5 @@
 import styles from './recruitService.module.scss';
+import { useRouter } from 'next/navigation';
 
 interface RecruitServiceChild {
   title: string;
@@ -7,6 +8,11 @@ interface RecruitServiceChild {
 }
 
 const RecruitService: React.FC<RecruitServiceChild> = (props) => {
+  const router = useRouter();
+  const onClickContact = () => {
+    router.push('/contact');
+  };
+
   return (
     <div className={styles.recruitService}>
       <div className={styles.title}>{props.title}</div>
@@ -21,7 +27,9 @@ const RecruitService: React.FC<RecruitServiceChild> = (props) => {
         );
       })}
 
-      <button className={styles.button}>{props.button}</button>
+      <button className={styles.button} onClick={onClickContact}>
+        {props.button}
+      </button>
     </div>
   );
 };
