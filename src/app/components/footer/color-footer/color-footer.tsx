@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 import styles from './color-footer.module.scss';
 import { useRouter } from 'next/navigation';
 
-const ColorFooter: React.FC = () => {
+const ColorFooter: React.FC<{ backGround: string }> = (props) => {
   const { t } = useTranslation('common');
   const router = useRouter();
 
@@ -44,7 +44,12 @@ const ColorFooter: React.FC = () => {
 
   return (
     <div className={styles.footer}>
-      <div className={styles.curve}></div>
+      {props.backGround === 'white2' ? (
+        <div className={styles.curveWhite2}></div>
+      ) : (
+        <div className={styles.curve}></div>
+      )}
+
       <div className={styles.menu}>
         <div className={styles.company}>
           <div className={styles.companyName}>{t('footer.companyName')}</div>
