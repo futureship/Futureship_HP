@@ -10,6 +10,10 @@ export const HeaderMenu: FC = () => {
   const { t } = useTranslation('common');
   const router = useRouter();
 
+  const onClickMission = () => {
+    router.push('/mission');
+  };
+
   const onClickService = () => {
     router.push('/service');
   };
@@ -24,7 +28,9 @@ export const HeaderMenu: FC = () => {
 
   return (
     <div className={styles.menu}>
-      <div className={styles.cursor}>{t('top.header.aboutMe')}</div>
+      <div className={styles.cursor} onClick={onClickMission}>
+        {t('top.header.aboutMe')}
+      </div>
       <div className={styles.cursor} onClick={onClickService}>
         {t('top.header.service')}
       </div>
