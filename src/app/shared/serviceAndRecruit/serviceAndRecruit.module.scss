@@ -1,0 +1,6 @@
+@import '@style/common.module';
+@import '@style/_color.const';
+
+.servicePage {
+  @include fontOnest;
+}

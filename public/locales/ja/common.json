@@ -1,0 +1,182 @@
+{
+  "top": {
+    "header": {
+      "logo": "Futureship",
+      "aboutMe": "私たちについて",
+      "service": "Service",
+      "recruit": "Recruit",
+      "contact": "お問い合わせ"
+    },
+    "title": {
+      "subTitle": "生きやすい社会を創る",
+      "title1": "Creating",
+      "title2": "a livable society"
+    }
+  },
+  "service": {
+    "title": "SERVICE",
+    "service1": {
+      "title": "つむぐ",
+      "description1": "「つむぐ」は日本の地域に密着したイベント・プロジェクトの総称です。\n過疎化、情報格差、後継者問題など日本の地域が抱えている課題と向き合い、\n様々なイベントやプロジェクトを通じてこれらを共有し、\n解決に向けてアクションをしていきます。",
+      "description2": "つむぐが開催するイベントや地域密着型プロジェクトは、\n参加者がその地域の「人」、「モノ」、「（できる）コト」と出会い、\n自分の未来に可能性と希望を持って生きていける、\nそんな共助コミュニティの実現を目指していきます。",
+      "button": "つむぐを知る"
+    },
+    "service2": {
+      "title": "ミラプロ",
+      "description1": "「ミラプロ」は未来のプロが育まれる場所です。\n正解が1つではない問いをみんなで楽しく学びながら、\nコミュニケーションスキルが身に付く教室です。\n学校のカリキュラムではなかなか手の届かないところを中心に\n様々なイベントやワークショップを行っています。\n物語をみんなで考えたり、自分の自己紹介をかっこよく英語で発表してみたり、\n早く走れる走り方を知ったり、自由な発想の工作をしたり、\n1人ではできない実験をしてみたり・・・。",
+      "description2": "一つ一つの体験から\n「好奇心がくすぐられ」、「自分の好きを発見し」、「将来の夢が広がる」ことを目指しています。",
+      "button": "ミラプロを知る"
+    }
+  },
+  "recruit": {
+    "recruit1": {
+      "title": "つむぐ「IRODORIマルジェ実行委員」に興味のある方",
+      "description1": "つむぐ主催の「IRODORIマルシェ」で\nマルシェのプロデュースを一緒にしませんか？",
+      "description2": "地元を盛り上げたい、マルシェイベントの企画・運営に興味がある、\n地域のコミュニティ作りをやってみたい、そんなあなた！\nわたしたちと一緒に活動しませんか？",
+      "button": "マルシェの実行委員になる"
+    },
+    "recruit2": {
+      "title": "ミラプロの運営に興味のある方",
+      "description1": "生徒たちをサポートしながら豊かな時間を過ごしませんか？",
+      "description2": "「子供が大好き」、「ずっと兄弟が欲しかった」、\n「小さい頃学童に通っていた」、「人に教えるのが好き」など、\nどんな体験も貴重な体験です。あなたの体験を活かせる場所で一緒に活動しませんか？",
+      "button": "ミラプロの運営になる"
+    }
+  },
+  "about": {
+    "title": "会社概要",
+    "companyName": "会社名：",
+    "foundationDay": "設立：",
+    "address": "住所：",
+    "ceo": "代表取締役：",
+    "business": "事業内容：",
+    "vision": "VISION：",
+    "mission": "MISSION：",
+    "history": "沿革",
+    "contents": {
+      "companyName": "Futureship株式会社",
+      "foundationDay": "2024年3月28日",
+      "address": "〒220-0072 神奈川県横浜市西区浅間町1丁目4番3号ウィザードビル402",
+      "ceo": "大森悠生",
+      "business": "地域イベント事業・人材育成事業・コミュニティ運営事業",
+      "vision": "生きやすい社会を創る（循環型社会を目指す）",
+      "mission": "1.個人が自分を大切にできる社会をつくる\n2.個人が他人も大切にできる社会をつくる",
+      "history": "2024.03 - :Futureship株式会社設立\n2024.04 - :フリースクール子供支援事業をリリース\n2024.05 - :地域イベントアート×食のフェスティバル『IRODORI』をリリース\n2024.06 - :小学生、未就学児童対象環境ワークショップ「Tシャツからエコバックを作ろう！」開催"
+    }
+  },
+  "footer": {
+    "companyName": "Futureship",
+    "subTitle": "生きやすい社会を創る",
+    "menu": {
+      "base": {
+        "forAboutMe": "私たちについて",
+        "profile": "会社概要",
+        "mission": "mission",
+        "message": "代表者メッセージ"
+      },
+      "service": {
+        "service": "service",
+        "service1": "つむぐ",
+        "service2": "ミラプロ"
+      },
+      "donation": {
+        "donation": "寄付について"
+      },
+      "recruitment": {
+        "recruitment": "採用情報"
+      },
+      "privacyPolicy": {
+        "privacyPolicy": "プライバシーポリシー"
+      },
+      "securityPolicy": {
+        "securityPolicy": "セキュリティポリシー"
+      }
+    },
+    "contact": "contact",
+    "contactMessage": "お問い合わせはこちら"
+  },
+  "mission": {
+    "mission": "MISSION",
+    "mission1": "個人が自分を大切にできる社会をつくる",
+    "mission2": "個人が他者も大切にできる社会をつくる",
+    "message": {
+      "message1": "「自分を大切にする」とは、\n自分の気持ちや考えを率直に表現できることから始まります。",
+      "message2": "それが実現できる社会は、\n異なる考えや意見に対して傾聴し、\n賛同をしなくともそういう考えがあることを理解し、\n互いの言い分を認めることから始まる、\n尊重し合う社会の土台だと私たちは考えるからです。",
+      "message3": "この２つのミッションは以下のFutureshipのプロジェクトで展開されています。"
+    }
+  },
+  "contact": {
+    "form": {
+      "title": "お問い合わせ",
+      "column": {
+        "name": "お名前",
+        "email": "メールアドレス",
+        "phone": "電話番号",
+        "place": "所属（任意）",
+        "position": "役職・学年（任意）",
+        "kind": "お問い合わせ種別",
+        "multiSelectable": "（複数可）",
+        "contents": {
+          "title": "お問い合わせ内容",
+          "description": "添付ファイルがある場合は、本文にファイルのダウンロード先URLを記載してください。"
+        }
+      },
+      "placeholder": {
+        "name": "姓と名の間にスペース",
+        "email": "ひらがな入力禁止",
+        "phone": "ハイフン無し　例）08088887777",
+        "place": "企業名・学校名・団体名",
+        "position": "役職",
+        "contents": {
+          "file": "ファイルを追加またはここにファイルをドロップ",
+          "textarea": "お問い合わせ内容を入力してください。"
+        }
+      },
+      "kindSelect": {
+        "homepage": "ホームページについて",
+        "service": "各種サービスについて",
+        "article": "記事掲載希望",
+        "media": "取材・メディア掲載希望",
+        "staff": "IRODORI・ミラプロのボランティアスタッフについて",
+        "other": "その他"
+      },
+      "confirmSecurity": {
+        "link": "セキュリティー（個人情報の取り扱い）",
+        "message": "に同意します"
+      },
+      "confirm": "お問い合わせ内容の確認に進む"
+    },
+    "check": {
+      "title": "お問い合わせ内容",
+      "description": "以下のお問い合わせ内容を確認して、送信してください。",
+      "column": {
+        "name": "お名前",
+        "email": "メールアドレス",
+        "phone": "電話番号",
+        "place": "所属",
+        "position": "役職",
+        "kind": "お問い合わせ種別",
+        "contents": "お問い合わせ内容"
+      },
+      "button": {
+        "edit": "編集する",
+        "confirm": "この内容で、お問い合わせを送信する"
+      }
+    },
+    "validator": {
+      "nameEmpty": "名前を入力してください。",
+      "nameInvalid": "姓斗名前の間にスペースを入れてください。",
+      "emailEmpty": "メールを入力してください。",
+      "emailInvalid": "メール形式が不正です。",
+      "phoneEmpty": "電話番号を入力してください。",
+      "phoneInvalid": "電話番号の形式が不正です。",
+      "kindEmpty": "お問い合わせ種別を一つ以上選択してください。",
+      "contentsEmpty": "お問い合わせ内容を入力してください。",
+      "fileSizeOver": "ファイルサイズは10MBまでです。",
+      "notConfirmedSecurityPolicy": "セキュリティポリシーに同意してください。"
+    }
+  },
+  "message": {
+    "title": "代表者メッセージ",
+    "readMore": "もっとみる"
+  }
+}

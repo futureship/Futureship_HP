@@ -1,23 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
+  --background: linear-gradient(
+    to right,
+    rgba(86, 202, 228, 0.2),
+    rgba(229, 50, 168, 0.2)
+  );
   --foreground: #171717;
 }
 
-@media (prefers-color-scheme: dark) {
+// メディアによって調整するときのスタイル
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Noto Sans JP', Arial, Helvetica, sans-serif;
 }
 
 @layer utilities {

@@ -1,0 +1,77 @@
+@import '@style/common.module';
+
+.footer {
+  background-color: #fff;
+  padding-bottom: 60px;
+  color: $black1;
+}
+
+.curve {
+  height: 60px;
+  width: 100%; /* 幅を指定 */
+  background-color: $white2; /* 背景色を指定 */
+  border-bottom-left-radius: 50%; /* 左上の角を丸く */
+  border-bottom-right-radius: 50%; /* 右上の角を丸く */
+  position: relative; /* 相対位置を指定 */
+  margin-bottom: 20px;
+}
+
+.menu {
+  @include fontOnest;
+
+  display: grid;
+  grid-template-columns: 5fr 2fr 2fr 2fr 2fr 2fr;
+  font-size: 14px;
+  padding: 0 30px;
+}
+
+.company {
+  margin: 0 auto;
+  font-weight: bold;
+}
+
+.companyName {
+  font-size: 48px;
+}
+
+.menuCategory {
+  margin-right: 12px;
+  line-height: 2;
+}
+
+.menuCategoryTitle {
+  font-weight: bold;
+}
+
+.contactArea {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 30px;
+}
+
+.contact {
+  border: solid 1px $black1; /* ボーダーなし */
+  background-color: white;
+  color: $black1; /* テキストの色 */
+  text-align: center; /* テキストの中央揃え */
+  text-decoration: none; /* テキストの下線なし */
+  display: flex; /* インラインブロック要素 */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px; /* フォントサイズ */
+  font-weight: bold; /* 太字にする */
+  margin: 4px 0 4px auto; /* 外側の余白 */
+  cursor: pointer; /* カーソルをポインタに */
+  border-radius: 32px; /* 角を丸くする */
+  width: 182px;
+  height: 49px;
+}
+
+.contactSub {
+  font-size: 8px;
+}
+
+.cursorPointer {
+  cursor: pointer;
+}

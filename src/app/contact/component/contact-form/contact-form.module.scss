@@ -1,0 +1,145 @@
+@import '@style/_color.const';
+@import '@style/common.module';
+
+.must {
+  &::after {
+    content: '*'; // 必須マーク
+    color: red; // 色を赤に設定
+    margin-left: 4px; // マージンを追加
+  }
+}
+
+.formArea {
+  width: 80%;
+  font-size: 16px;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+
+  padding: 32px 0 16px 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 4fr 7fr;
+  padding-top: 16px;
+}
+
+.inputTitle {
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  height: 48px;
+  padding-left: 8px;
+  background-color: $white3;
+  border: solid 1px;
+  border-color: $gray2;
+  border-radius: 5px;
+}
+
+.kindTitle {
+  font-size: 14px;
+  color: $gray3;
+  padding-bottom: 16px;
+}
+
+.kind {
+  padding: 20px 0 16px 0;
+}
+
+.contents {
+  width: 100%;
+  padding-bottom: 16px;
+
+  .description {
+    font-size: 12px;
+    padding-bottom: 16px;
+  }
+
+  .fileInput {
+    width: 100%;
+    height: 48px;
+    color: $gray3;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding-left: 20px;
+    background-color: $white3;
+    border: solid 1px;
+    border-color: $gray2;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+      border-color: #888888;
+    }
+  }
+
+  .filesName {
+    margin: 4px 0 12px 0;
+
+    .fileName {
+      padding: 2px 0 2px 5px;
+      font-size: 12px;
+      color: $water-blue1;
+    }
+
+    .deleteFile {
+      cursor: pointer;
+      margin-left: 4px;
+      color: $pink1;
+      font-size: 14px;
+    }
+  }
+
+  .textarea {
+    width: 100%;
+    height: 140px;
+
+    padding-left: 8px;
+    padding-top: 10px;
+    background-color: $white3;
+    border: solid 1px;
+    border-color: $gray2;
+    border-radius: 5px;
+  }
+}
+
+.security {
+  padding-bottom: 16px;
+
+  .securityLink {
+    color: $green1;
+  }
+}
+
+.confirm {
+  @include gradient2;
+
+  width: 100%;
+  height: 48px;
+  margin-bottom: 16px;
+  border-radius: 7px;
+}
+
+.errorArea {
+  display: grid;
+  grid-template-columns: 4fr 7fr;
+}
+
+.error {
+  color: $error;
+  font-size: 10px;
+}
+
+.checkbox {
+  margin: 0 3px;
+}

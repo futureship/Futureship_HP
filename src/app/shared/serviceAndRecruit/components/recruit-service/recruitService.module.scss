@@ -1,0 +1,37 @@
+@import '@style/common.module';
+@import '@style/_color.const';
+
+.recruitService {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding-bottom: 60px;
+}
+
+.title {
+  @include textShadow;
+
+  font-size: 34px;
+  font-weight: bold;
+  color: $gray1;
+}
+
+.description {
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  color: $gray1;
+  font-weight: bold;
+
+  .line {
+    padding: 3px 0;
+  }
+}
+
+.button {
+  @include gradient-button;
+  font-size: 12px;
+}

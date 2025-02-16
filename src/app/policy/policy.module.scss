@@ -1,0 +1,67 @@
+@import '@style/_color.const';
+@import '@style/common.module';
+
+.base {
+  @include fontOnest;
+  background-color: $white2;
+}
+
+.title {
+  font-size: 32px;
+  display: flex;
+  justify-content: center;
+  padding: 30px 0;
+}
+
+.contents {
+  display: flex;
+  justify-content: center;
+}
+
+.faceImg {
+  @include gradient2;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  margin: 30px;
+}
+
+.template {
+  @include boxShadow;
+  background-color: $white3;
+
+  padding: 50px;
+  margin: 0 30px 30px 30px;
+  width: 50%;
+  border-radius: 40px;
+  overflow-x: hidden;
+}
+
+.message {
+  font-size: 16px;
+  overflow: auto;
+  word-wrap: break-word;
+  white-space: normal;
+  min-height: 20px;
+  line-height: 160%;
+}
+
+.button {
+  display: flex;
+  flex-direction: column;
+  // align-items: center;
+}
+
+.expandButton {
+  @include gradient2;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+
+  font-size: 24px;
+  font-weight: none;
+}
+
+.buttonMessage {
+  font-size: 10px;
+}
