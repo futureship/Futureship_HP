@@ -51,7 +51,7 @@ export const ContactForm: React.FC = () => {
     updateContentsValidatorStatus,
     isExistsValidatorError,
   } = useContactValidateStatusViewModel();
-  const MAX_TOTAL_SIZE = 5 * 1024 * 1024; // 最大合計サイズを5MBに設定
+  // const MAX_TOTAL_SIZE = 5 * 1024 * 1024; // 最大合計サイズを5MBに設定
 
   const onDrop = (acceptedFiles: File[]) => {
     addFiles(acceptedFiles);
