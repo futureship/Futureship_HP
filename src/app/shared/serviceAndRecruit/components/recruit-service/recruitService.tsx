@@ -20,8 +20,8 @@ const RecruitService: React.FC<RecruitServiceChild> = (props) => {
       {props.description.map((desc, index) => {
         return (
           <div key={index} className={styles.description}>
-            {desc.split('\n').map((line, index) => (
-              <div key={index} className={styles.line}>
+            {desc.split('\n').map((line, lineIndex) => (
+              <div key={lineIndex} className={styles.line}>
                 {line}
               </div>
             ))}
