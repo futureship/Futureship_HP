@@ -1,6 +1,5 @@
 import { useAtom } from 'jotai';
 
-import _ from 'lodash';
 import {
   contentsValidatorStatusAtom,
   emailValidatorStatusAtom,
