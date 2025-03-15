@@ -31,8 +31,10 @@ export const ContactPreview: React.FC = () => {
   });
   const kindPreview = kindPreviewList.join('、');
 
-  const addedFiles = files.map((file) => (
-    <div className={styles.files}>{file.name}</div>
+  const addedFiles = files.map((file, index) => (
+    <div key={index} className={styles.files}>
+      {file.name}
+    </div>
   ));
 
   return (
