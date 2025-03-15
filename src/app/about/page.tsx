@@ -9,8 +9,8 @@ const About: React.FC = () => {
   const { t } = useTranslation('common');
   const history = t('about.contents.history')
     .split('\n')
-    .map((line) => (
-      <tr>
+    .map((line, index) => (
+      <tr key={index}>
         <td className={styles.historyTd}>{line.split(':')[0]}</td>
         <td>{line.split(':')[1]}</td>
       </tr>
