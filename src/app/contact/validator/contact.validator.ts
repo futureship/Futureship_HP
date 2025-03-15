@@ -41,15 +41,15 @@ export const ContactContentsValidateError = {
 export type ContactContentsValidateError =
   (typeof ContactContentsValidateError)[keyof typeof ContactContentsValidateError];
 
-export namespace ContactsValidator {
-  export function getContactNameValidateErrorCode(name: string) {
+export const ContactsValidator = {
+  getContactNameValidateErrorCode(name: string) {
     if (name === '') {
       return ContactNameValidateError.nameEmpty;
     }
     return ContactNameValidateError.noError;
-  }
+  },
 
-  export function getContactEmailValidateErrorCode(email: string) {
+  getContactEmailValidateErrorCode(email: string) {
     if (email === '') {
       return ContactEmailValidateError.emailEmpty;
     }
@@ -59,9 +59,8 @@ export namespace ContactsValidator {
     }
 
     return ContactEmailValidateError.noError;
-  }
-
-  export function getContactPhoneValidateErrorCode(phone: string) {
+  },
+  getContactPhoneValidateErrorCode(phone: string) {
     if (phone === '') {
       return ContactPhoneValidateError.phoneEmpty;
     }
@@ -71,9 +70,9 @@ export namespace ContactsValidator {
     }
 
     return ContactPhoneValidateError.noError;
-  }
+  },
 
-  export function getContactKindValidateErrorCode(kind: ContactKindSet) {
+  getContactKindValidateErrorCode(kind: ContactKindSet) {
     const isExistsContactKind = contactKindEnumKeys().some((key) => {
       return kind[key as keyof ContactKindSet];
     });
@@ -83,19 +82,16 @@ export namespace ContactsValidator {
     }
 
     return ContactKindValidateError.noError;
-  }
+  },
 
-  export function getContactContentsValidateErrorCode(
-    contents: string,
-    files: File[]
-  ) {
+  getContactContentsValidateErrorCode(contents: string, files: File[]) {
     if (contents === '' && files.length === 0) {
       return ContactContentsValidateError.contentsEmpty;
     }
 
     return ContactContentsValidateError.noError;
-  }
-}
+  },
+};
 
 function checkEmailPattern(email: string) {
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // メールアドレスの正規表現
