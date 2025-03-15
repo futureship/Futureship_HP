@@ -10,7 +10,7 @@ const About: React.FC = () => {
   const history = t('about.contents.history')
     .split('\n')
     .map((line, index) => (
-      <tr key={index}>
+      <tr key={index.toString()}>
         <td className={styles.historyTd}>{line.split(':')[0]}</td>
         <td>{line.split(':')[1]}</td>
       </tr>
