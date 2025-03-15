@@ -11,8 +11,10 @@ const About: React.FC = () => {
     .split('\n')
     .map((line, index) => (
       <tr key={index.toString()}>
-        <td className={styles.historyTd}>{line.split(':')[0]}</td>
-        <td>{line.split(':')[1]}</td>
+        <td key={index} className={styles.historyTd}>
+          {line.split(':')[0]}
+        </td>
+        <td key={index}>{line.split(':')[1]}</td>
       </tr>
     ));
 
