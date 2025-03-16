@@ -15,7 +15,7 @@ const ServiceInfo: React.FC<ServiceInfoChild> = (props) => {
         return (
           <div key={index} className={styles.description}>
             {desc.split('\n').map((line, lineIndex) => (
-              <div key={lineIndex.toString()} className={styles.line}>
+              <div key={`${index}-${lineIndex}`} className={styles.line}>
                 {line}
               </div>
             ))}
