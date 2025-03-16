@@ -1,18 +1,20 @@
 'use client';
 
 import ColorFooter from '@/app/components/footer/color-footer/color-footer';
-import styles from './about.module.scss';
 import '@i18n';
 import { useTranslation } from 'react-i18next';
+import styles from './about.module.scss';
 
 const About: React.FC = () => {
   const { t } = useTranslation('common');
   const history = t('about.contents.history')
     .split('\n')
-    .map((line) => (
-      <tr>
-        <td className={styles.historyTd}>{line.split(':')[0]}</td>
-        <td>{line.split(':')[1]}</td>
+    .map((line, index) => (
+      <tr key={index.toString()}>
+        <td key={`td-${index}`} className={styles.historyTd}>
+          {line.split(':')[0]}
+        </td>
+        <td key={`contents-${index}`}>{line.split(':')[1]}</td>
       </tr>
     ));
 
@@ -69,7 +71,7 @@ const About: React.FC = () => {
       </table>
 
       <footer className={styles.footer}>
-        <ColorFooter></ColorFooter>
+        <ColorFooter backGround={''}></ColorFooter>
       </footer>
     </div>
   );
