@@ -1,4 +1,4 @@
-import { Top } from "@/app/pages/top/top";
+import Main from '@app/pages/main';
 
 // export async function getStaticProps({ locale }) {
 //   return {
@@ -11,7 +11,7 @@ import { Top } from "@/app/pages/top/top";
 // }
 
 export default function Home() {
-  return (<Top></Top>)
+  return <Main></Main>;
 }
 
 // import Image from "next/image";

@@ -18,7 +18,7 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"],
+      "@app/*": ["./src/app/*"],
       "@style/*": ["./src/app/styles/*"],
       "@i18n": ["./public/locales/i18n"]
     }
