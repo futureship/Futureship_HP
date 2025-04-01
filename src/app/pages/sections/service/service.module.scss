@@ -1,0 +1,5 @@
+.container {
+  display: flex;
+  flex-direction: column; /* 縦に並べる */
+  min-height: 100vh; /* ビューポートの高さを100%に設定 */
+}

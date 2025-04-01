@@ -1,5 +1,6 @@
 'use client';
 
+import { UnderWave } from '@app/pages/components/underWave/underWave';
 import { MissionNo } from '@app/pages/sections/mission/component/mission-no/mission-no';
 import '@i18n';
 import { useTranslation } from 'react-i18next';
@@ -55,7 +56,8 @@ const Mission: React.FC = () => {
         <br />
         {message3}
       </div>
-      <img className={styles.img} src="/assets/svg/under-wave2.svg"></img>
+      {/* <img className={styles.img} src="/assets/svg/under-wave2.svg"></img> */}
+      <UnderWave></UnderWave>
     </div>
   );
 };

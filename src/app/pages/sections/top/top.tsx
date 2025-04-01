@@ -1,6 +1,6 @@
 'use client';
 
-import { Footer } from '@app/pages/sections/top/components/footer/footer';
+import { UnderWave } from '@app/pages/components/underWave/underWave';
 import { Header } from '@app/pages/sections/top/components/header/header';
 import '@i18n';
 import { useTranslation } from 'react-i18next';
@@ -22,7 +22,7 @@ export const Top: React.FC = () => {
         <div className={styles.title}>{t('top.title.title1')}</div>
         <div className={styles.title}>{t('top.title.title2')}</div>
       </div>
-      <Footer></Footer>
+      <UnderWave></UnderWave>
     </div>
   );
 };
