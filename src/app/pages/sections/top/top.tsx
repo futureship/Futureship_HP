@@ -1,10 +1,10 @@
 'use client';
 
-import styles from './top.module.scss';
+import { Footer } from '@app/pages/sections/top/components/footer/footer';
+import { Header } from '@app/pages/sections/top/components/header/header';
 import '@i18n';
-import { Header } from '@/app/pages/top/components/header/header';
-import { Footer } from '@/app/pages/top/components/footer/footer';
 import { useTranslation } from 'react-i18next';
+import styles from './top.module.scss';
 
 export const Top: React.FC = () => {
   const { t } = useTranslation('common');

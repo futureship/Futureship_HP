@@ -1,6 +1,6 @@
 'use client';
 
-import ColorFooter from '@/app/components/footer/color-footer/color-footer';
+import ColorFooter from '@app/components/footer/color-footer/color-footer';
 import '@i18n';
 import { useTranslation } from 'react-i18next';
 import styles from './about.module.scss';

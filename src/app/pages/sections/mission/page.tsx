@@ -1,9 +1,9 @@
 'use client';
 
-import { MissionNo } from '@/app/mission/component/mission-no/mission-no';
-import styles from './mission.module.scss';
+import { MissionNo } from '@app/pages/sections/mission/component/mission-no/mission-no';
 import '@i18n';
 import { useTranslation } from 'react-i18next';
+import styles from './mission.module.scss';
 
 const Mission: React.FC = () => {
   const { t } = useTranslation('common');

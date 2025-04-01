@@ -1,7 +1,7 @@
 'use client';
 
+import { ServiceAndRecruit } from '@app/shared/serviceAndRecruit/serviceAndRecruit';
 import React from 'react';
-import { ServiceAndRecruit } from '@/app/shared/serviceAndRecruit/serviceAndRecruit';
 
 const Recruit: React.FC = () => {
   return <ServiceAndRecruit></ServiceAndRecruit>;

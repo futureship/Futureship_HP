@@ -1,9 +1,9 @@
 'use client';
 
-import ServiceInfo from '@/app/shared/serviceAndRecruit/components/service-info/serviceInfo';
-import styles from './service.module.scss';
+import ServiceInfo from '@app/shared/serviceAndRecruit/components/service-info/serviceInfo';
 import '@i18n';
 import { useTranslation } from 'react-i18next';
+import styles from './service.module.scss';
 
 export const Service: React.FC = () => {
   const { t } = useTranslation('common');
