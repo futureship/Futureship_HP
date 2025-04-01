@@ -1,9 +1,10 @@
 'use client';
 
-import { MissionNo } from '@/app/mission/component/mission-no/mission-no';
-import styles from './mission.module.scss';
+import { UnderWave } from '@app/pages/components/underWave/underWave';
+import { MissionNo } from '@app/pages/sections/mission/component/mission-no/mission-no';
 import '@i18n';
 import { useTranslation } from 'react-i18next';
+import styles from './mission.module.scss';
 
 const Mission: React.FC = () => {
   const { t } = useTranslation('common');
@@ -55,7 +56,8 @@ const Mission: React.FC = () => {
         <br />
         {message3}
       </div>
-      <img className={styles.img} src="/assets/svg/under-wave2.svg"></img>
+      {/* <img className={styles.img} src="/assets/svg/under-wave2.svg"></img> */}
+      <UnderWave></UnderWave>
     </div>
   );
 };

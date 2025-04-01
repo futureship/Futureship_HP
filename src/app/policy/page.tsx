@@ -1,11 +1,11 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
 import '@i18n';
+import React, { useEffect, useState } from 'react';
 import styles from './policy.module.scss';
 
+import ColorFooter from '@app/components/footer/color-footer/color-footer';
 import { useTranslation } from 'react-i18next';
-import ColorFooter from '@/app/components/footer/color-footer/color-footer';
 
 const Policy: React.FC = () => {
   const [data, setData] = useState<string | null>(null);

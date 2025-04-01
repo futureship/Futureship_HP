@@ -1,8 +1,8 @@
 'use client';
 
+import RecruitService from '@app/shared/serviceAndRecruit/components/recruit-service/recruitService';
 import '@i18n';
 import { useTranslation } from 'react-i18next';
-import RecruitService from '@/app/shared/serviceAndRecruit/components/recruit-service/recruitService';
 
 export const Recruit: React.FC = () => {
   const { t } = useTranslation('common');

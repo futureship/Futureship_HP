@@ -1,10 +1,10 @@
 'use client';
 
-import styles from './top.module.scss';
+import { UnderWave } from '@app/pages/components/underWave/underWave';
+import { Header } from '@app/pages/sections/top/components/header/header';
 import '@i18n';
-import { Header } from '@/app/pages/top/components/header/header';
-import { Footer } from '@/app/pages/top/components/footer/footer';
 import { useTranslation } from 'react-i18next';
+import styles from './top.module.scss';
 
 export const Top: React.FC = () => {
   const { t } = useTranslation('common');
@@ -22,7 +22,7 @@ export const Top: React.FC = () => {
         <div className={styles.title}>{t('top.title.title1')}</div>
         <div className={styles.title}>{t('top.title.title2')}</div>
       </div>
-      <Footer></Footer>
+      <UnderWave></UnderWave>
     </div>
   );
 };

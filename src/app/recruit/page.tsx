@@ -1,10 +1,18 @@
 'use client';
 
+import ColorFooter from '@app/components/footer/color-footer/color-footer';
+import { ServiceAndRecruit } from '@app/shared/serviceAndRecruit/serviceAndRecruit';
 import React from 'react';
-import { ServiceAndRecruit } from '@/app/shared/serviceAndRecruit/serviceAndRecruit';
 
 const Recruit: React.FC = () => {
-  return <ServiceAndRecruit></ServiceAndRecruit>;
+  return (
+    <>
+      <ServiceAndRecruit></ServiceAndRecruit>;
+      <footer>
+        <ColorFooter backGround=""></ColorFooter>
+      </footer>
+    </>
+  );
 };
 
 export default Recruit;
